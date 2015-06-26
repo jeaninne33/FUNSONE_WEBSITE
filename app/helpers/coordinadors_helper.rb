@@ -1,0 +1,2 @@
+module CoordinadorsHelper
+end

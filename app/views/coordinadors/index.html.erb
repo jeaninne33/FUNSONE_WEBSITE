@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Coordinadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Foto</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+      <th>Correo</th>
+      <th>Linkd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coordinadors.each do |coordinador| %>
+      <tr>
+        <td><%= coordinador.nombre %></td>
+        <td><%= coordinador.apellido %></td>
+        <td><%= coordinador.foto %></td>
+        <td><%= coordinador.twitter %></td>
+        <td><%= coordinador.facebook %></td>
+        <td><%= coordinador.correo %></td>
+        <td><%= coordinador.linkd %></td>
+        <td><%= link_to 'Show', coordinador %></td>
+        <td><%= link_to 'Edit', edit_coordinador_path(coordinador) %></td>
+        <td><%= link_to 'Destroy', coordinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coordinador', new_coordinador_path %>
