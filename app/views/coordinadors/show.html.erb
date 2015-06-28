@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @coordinador.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @coordinador.apellido %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= @coordinador.foto %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @coordinador.twitter %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @coordinador.facebook %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @coordinador.correo %>
+</p>
+
+<p>
+  <strong>Linkd:</strong>
+  <%= @coordinador.linkd %>
+</p>
+
+<%= link_to 'Edit', edit_coordinador_path(@coordinador) %> |
+<%= link_to 'Back', coordinadors_path %>
