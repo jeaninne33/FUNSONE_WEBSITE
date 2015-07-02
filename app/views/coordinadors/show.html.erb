@@ -32,8 +32,13 @@
 
 <p>
   <strong>Linkd:</strong>
-  <%= @coordinador.linkd %>
+  <%=  @coordinador.linkd %>
 </p>
+
+
+<%= image_tag @coordinador.image_url if @coordinador.image? %>
+
+
 
 <%= link_to 'Edit', edit_coordinador_path(@coordinador) %> |
 <%= link_to 'Back', coordinadors_path %>

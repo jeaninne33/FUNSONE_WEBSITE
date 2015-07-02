@@ -22,7 +22,6 @@
 	<title>.::Fundación Social - Nueva Esparta::.</title>
   <%= csrf_meta_tags %>
 
-<%#= yield %>
 
 
 
@@ -36,14 +35,19 @@
  <%= stylesheet_link_tag 'prettyPhoto.css' %>
  <%= stylesheet_link_tag 'animations.css' %>
  <%= stylesheet_link_tag 'font-awesome.min.css' %>
-
-
+ <%= stylesheet_link_tag 'skyblue/style.css'%>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>  
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 
+
 <body>
+
+
+<%= yield%>
+
 <!-- <div class="loader-wrapper">
 	<div id="loader-image"></div>
 </div>-->
@@ -242,25 +246,39 @@
                 <div id="layerslider_9" class="ls-wp-container" style="width:100%;height:645px;max-width:1920px;margin:0 auto;margin-bottom: 0px;">
            
                     <div class="ls-slide" data-ls="slidedelay:10000;transition2d:4;">
-                        <img src="images/bg3.jpg" class="ls-bg" alt="bg1" />
+
+                    <%= image_tag "bg3.jpg",:class=>"ls-bg"%>
+
                         <div class="ls-l" style="top:196px;left:20px;font-weight:700; z-index:5;padding-left:0px;font-family:'Lato', 'Open Sans', sans-serif;font-size:59px;line-height:46px;color:#101017;white-space: nowrap; " data-ls="offsetxin:0;offsetyin:200;durationin:2500;delayin:1500;transformoriginin:left 50% 0;offsetxout:0;rotateyout:-90;transformoriginout:left 50% 0;">FUNSONE <span style="color:#ff8000; font-weight:400;font-size:49px">Atiende a</span> </div>
                         <div class="ls-l" style="color:#101017;top:266px;left:22px;font-weight:380; z-index:3;font-family:'Lato';font-size:30px;line-height:26px;white-space: nowrap;" data-ls="offsetxin:-100;durationin:2000;delayin:2500;">Niños, Niñas, Adolescentes y Adultos Mayores</div>
                         <div class="ls-l" style="top:325px;left:20px;z-index: display:block;width:622px;height:2px;border-bottom:1px solid #101017;font-family:'Ubuntu';font-size:24px;line-height:34px;color:#020203;background:#101017;white-space: nowrap;" data-ls="offsetxin:-500;durationin:2500;delayin:4500;"><br> </div>
-                        <img class="ls-l" style="top:0px;left:636px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:500;delayin:1800;" src="images/bg3.jpg" data-src="images/dino.png" alt="image">
+
+
+                       	<%= image_tag "bg3.jpg", class: "ls-l", :style => "top:0px;left:636px;white-space: nowrap;" ,data: { src: "assets/dino.png"  ,ls: "offsetxin:0;offsetyin:500;delayin:1800;"} %>
+
+
+
+
+
                         <p class="ls-l" style="top:172px;left:551px;font-weight:300;font-family:Lato;font-size:123px;color:white;white-space: nowrap;" data-ls="durationin:2000;delayin:2000;"></p>
 
                         <div class="ls-l" style="top:360px;left:20px;font-weight:600; z-index:5; letter-spacing: 1px;padding-left:0px;font-family:'Lato', 'Open Sans', sans-serif;font-size:58px;line-height:44px; color:#61210B;  white-space: nowrap; " data-ls="offsetxin:0;offsetyin:200;durationin:2500;delayin:3500;transformoriginin:left 50% 0;offsetxout:0;rotateyout:-90;transformoriginout:left 50% 0">en Nueva Esparta</div>
                     </div>
 
             <div class="ls-slide" data-ls="slidedelay:10000;transition2d:4;">
-                            <img src="images/sliders/adultomayor.jpg" class="ls-bg" alt="bg2" />
+                 		   <%= image_tag "sliders/adultomayor.jpg",:class=>"ls-bg"%>
+
+
+
                             <div class="ls-l" style="top:185px;left:15px;font-weight:600; z-index:5;padding-left:0px;font-family:'Lato', 'Open Sans', sans-serif;font-size:60px;line-height:46px;color:white;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:-100;durationin:2000;delayin:2500;transformoriginin:left 50% 0;offsetxout:0;rotateyout:-90;transformoriginout:left 50% 0;">FUNSONE<span style="font-size:40px;font-weight:50;padding-left:20px">de la mano</span> </div>
                             <div class="ls-l" style="top:150px;left:20px;font-weight:700; z-index:3;font-family:'Lato';font-size:25px;line-height:26px;color:#01a8df;white-space: nowrap;" data-ls="offsetxin:-100;durationin:2000;delayin:1500;">En Nueva Esparta</div>
                             <div class="ls-l" style="top:257px;left:20px;font-weight:400; z-index:3; letter-spacing:3.5px;font-family:'Lato';font-size:43px;line-height:38px;color:#81F781;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:100;durationin:2000;delayin:3500;">Con el Pueblo</div>
                             <div class="ls-l" style="top:323px;left:20px;font-weight:300;font-family:'Lato';font-size:18px;color:white;white-space: nowrap;" data-ls="delayin:4500;"><span style="color:white; font-weight:700;"> </span>Brindando ayudas Medicas</div>
                             <p class="ls-l" style="top:470px;left:20px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:100;delayin:7000;"> <a href="#" class="dt-sc-button1 ico-button"> Conoce nuestras Ayudas</a></p>
                             <div class="ls-l" style="top:178px;left:302px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:100;delayin:3000;"> </div>
-                            <img class="ls-l" style="top:0px;left:636px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:500;durationin:1800;" src="images/sliders/blank.gif" data-src="images/sliders/woman.png" alt="image">
+
+                       	<%= image_tag "bg3.jpg", class: "ls-l", :style => "top:0px;left:636px;white-space: nowrap;" ,data: { src: "assets/sliders/woman.png"  ,ls: "offsetxin:0;offsetyin:500;durationin:1800;"} %>
+
                             <div class="ls-l" style="top:353px;left:20px;font-weight:300;font-family:'Lato';font-size:18px;color:#101017;white-space: nowrap; color:white" data-ls="delayin:5000;">Asistencia Psicologica, <span style="color:white; font-weight:700;">Kits Deportivos</span></div>
                             <div class="ls-l" style="top:383px;left:20px;font-weight:300;font-family:'Lato';font-size:18px;color:white;white-space: nowrap;" data-ls="delayin:5500;">Becas Estudiantiles, <span style="color:white; font-weight:700;">Cestas de Alimentacion</span> </div>
                             <div class="ls-l" style="top:413px;left:20px;font-weight:300;font-family:'Lato';font-size:18px;color:white;white-space: nowrap;" data-ls="delayin:6000;"><span style="color:white; font-weight:700;">Canastillas, </span> Reparaciones de Vivienda</div>
@@ -270,13 +288,18 @@
 
 
                     <div class="ls-slide" data-ls="slidedelay:10000;transition2d:4;">
-                        <img src="images/Castillo.JPG" class="ls-bg" alt="bg1" />
+                        <%= image_tag "Castillo.JPG",:class=>"ls-bg"%>
+
+
                         <div class="ls-l" style="top:185px;left:25px; font-weight:normal; z-index:5;padding-left:120px;font-family:'Lato', 'Open Sans', sans-serif;font-size:60px;line-height:46px;color:    #DF7401;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:-100;durationin:2000;delayin:2500;transformoriginin:left 50% 0;offsetxout:0;rotateyout:-90;transformoriginout:left 50% 0;">FUNSONE</div>
                         <div class="ls-l" style="top:150px;left:25px;font-weight:700;padding-left:90px; z-index:3;font-family:'Lato';font-size:25px;line-height:22px;color:#1C1C1C;white-space: nowrap;padding-left:120px;" data-ls="offsetxin:-100;durationin:2000;delayin:1git remote show origin500;">El futuro es importante, por ello</div>
                         <div class="ls-l" style="top:257px;left:25px;font-weight:400; z-index:3; letter-spacing:3px;font-family:'Lato';font-size:40px;line-height:26px;color:#0B610B;white-space: nowrap; padding-left:120px;" data-ls="offsetxin:0;offsetyin:100;durationin:2000;delayin:3500;">En Nueva Esparta</div>
                         <div class="ls-l" style="top:323px;left:25px;font-weight:300;font-family:'Lato';font-size:18px; padding-left:120px; color:black;white-space: nowrap;" data-ls="delayin:4500;">Otorgando ayudas a las madres Neoespartanas:</div>
                         <p class="ls-l" style="top:470px;left:20px;white-space: nowrap; padding-left:120px;" data-ls="offsetxin:0;offsetyin:100;delayin:7000;"> <a href="#" class="dt-sc-button1 ico-button" style="color:black;">Ver más Ayudas</a></p>
-                        <img class="ls-l" style="top:0px;left:736px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:500;delayin:1800;" src="images/sliders/embarazada.png" data-src="images/sliders/embarazada.png" alt="image">
+
+                       	<%= image_tag "Castillo.JPG", class: "ls-l", :style => "top:0px;left:736px;white-space: nowrap;" ,data: { src: "assets/sliders/embarazada.png"  ,ls: "offsetxin:0;offsetyin:500;delayin:1800;"} %>
+
+
 
 
                         <div class="ls-l" style="top:353px;left:20px;font-weight:300;font-family:'Lato'; padding-left:120px;  font-size:18px;color:#101017;white-space: nowrap;" data-ls="delayin:5000;">Ayuda Económica <span style="color:black; font-weight:700;">Ayuda medicas</span></div>
@@ -310,7 +333,8 @@
 				    <div class="column dt-sc-one-fourth animate first" data-animation="fadeInDown" data-delay="100">
 				        <div class="dt-sc-ico-content type1">
 				            <div class="icon">
-				                <img src="images/setting-icon.png" alt="setting"/>
+				              <%= image_tag "setting-icon.png" %>
+				                
 				            </div>
 				            <h4> <a href="#"> Becas Estudiantiles </a> </h4>
 				            <p>Becas para estudiantes de Primaria, Secundaria  y Universidad. </p>
@@ -319,7 +343,7 @@
 				    <div class="column dt-sc-one-fourth animate" data-animation="fadeInDown" data-delay="200">
 				        <div class="dt-sc-ico-content type1">
 				            <div class="icon">
-				                <img src="images/trophy-icon.png" alt="trophy"/>
+				                <%= image_tag "trophy-icon.png" %>
 				            </div>
 				            <h4> <a href="#"> Niños, Niñas y Adolescentes </a> </h4>
 				            <p>Entrega de Canastillas, Medicamentos, Ayudas Técnicas, Pasajes Aereos. </p>
@@ -328,7 +352,7 @@
 				    <div class="column dt-sc-one-fourth animate" data-animation="fadeInDown" data-delay="300">
 				        <div class="dt-sc-ico-content type1">
 				            <div class="icon">
-				                <img src="images/paper-plane-icon.png" alt="plane"/>
+				                <%= image_tag "paper-plane-icon.png" %>
 				            </div>
 				            <h4> <a href="#"> Adultos Mayores </a> </h4>
 				            <p>Ayudas Económicas, Medicamentos, Boletos Aéreos, Exámenes Médicos, Estudios Especializados.</p>
@@ -337,7 +361,7 @@
 				    <div class="column dt-sc-one-fourth animate" data-animation="fadeInDown" data-delay="400">
 				        <div class="dt-sc-ico-content type1">
 				            <div class="icon">
-				                <img src="images/flag-icon.png" alt="flag"/>
+				                <%= image_tag "flag-icon.png" %>
 				            </div>
 				            <h4> <a href="#"> Personas con Discapacidad </a> </h4>
 				            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae </p>
@@ -1011,7 +1035,7 @@
     <%= javascript_include_tag 'jquery-1.10.2.min.js','jquery-migrate.min.js','preloader.js','pace.min.js' ,'jquery.tabs.min.js','jquery.tipTip.minified.js','jquery-easing-1.3.js' ,'jquery.parallax-1.1.3.js','jquery.inview.js' ,'jquery.viewport.js','jquery.nav.js','layerslider.transitions.js','layerslider.kreaturamedia.jquery.js','greensock.js' %>
 
 
-    <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script><script data-cfasync="false" type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_9','jquery'); } else { lsjQuery("#layerslider_9").layerSlider({responsiveUnder: 1240, layersContainer: 1170, startInViewport: false, pauseOnHover: false, forceLoopNum: false, autoPlayVideos: false, skinsPath: 'js/layerslider/skins/'}) } }); </script>
+    <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script><script data-cfasync="false" type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_9','jquery'); } else { lsjQuery("#layerslider_9").layerSlider({responsiveUnder: 1240, layersContainer: 1170, startInViewport: false, pauseOnHover: false, forceLoopNum: false, autoPlayVideos: false, skinsPath: 'assets/layerslider/skins/'}) } }); </script>
 	
 
    <%= javascript_include_tag 'jquery.jcarousel.min.js' , 'jquery.carouFredSel-6.2.1-packed.js' , 'jquery.isotope.min.js', 'jquery.prettyPhoto.js', 'masonry.pkgd.min.js' , 'responsive-nav.js' , 'jquery.meanmenu.min.js' , 'jquery.tipTip.minified.js' %>
