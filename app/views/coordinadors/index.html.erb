@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Coordinadors</h1>
+<h1>Listado de  Coordinadores</h1>
 
 <table>
   <thead>
@@ -21,7 +21,7 @@
       <tr>
         <td><%= coordinador.nombre %></td>
         <td><%= coordinador.apellido %></td>
-        <td><%= coordinador.foto %></td>
+        <td><%= image_tag coordinador.image_url(:thumb) if coordinador.image? %></td>
         <td><%= coordinador.twitter %></td>
         <td><%= coordinador.facebook %></td>
         <td><%= coordinador.correo %></td>
