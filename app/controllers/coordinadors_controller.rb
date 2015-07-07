@@ -57,6 +57,6 @@ class CoordinadorsController < ApplicationController
     end
 
     def coordinador_params
-      params.require(:coordinador).permit(:nombre, :apellido, :foto, :twitter, :facebook, :correo, :linkd,:image, :remote_image_url )
+      params.require(:coordinador).permit(:nombre, :apellido, :foto, :twitter, :facebook, :correo, :linkd,:image, :cargo, :remote_image_url )
     end
 end

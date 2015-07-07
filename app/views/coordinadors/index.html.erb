@@ -8,6 +8,7 @@
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Foto</th>
+      <th>Cargo</th>
       <th>Twitter</th>
       <th>Facebook</th>
       <th>Correo</th>
@@ -22,6 +23,7 @@
         <td><%= coordinador.nombre %></td>
         <td><%= coordinador.apellido %></td>
         <td><%= image_tag coordinador.image_url(:thumb) if coordinador.image? %></td>
+         <td><%= coordinador.cargo %></td>
         <td><%= coordinador.twitter %></td>
         <td><%= coordinador.facebook %></td>
         <td><%= coordinador.correo %></td>
