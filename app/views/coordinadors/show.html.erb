@@ -9,10 +9,9 @@
   <strong>Apellido:</strong>
   <%= @coordinador.apellido %>
 </p>
-
 <p>
-  <strong>Foto:</strong>
-  <%= @coordinador.foto %>
+  <strong>Cargo:</strong>
+  <%= @coordinador.cargo %>
 </p>
 
 <p>
@@ -32,8 +31,15 @@
 
 <p>
   <strong>Linkd:</strong>
-  <%= @coordinador.linkd %>
+  <%=  @coordinador.linkd %>
 </p>
+
+<p>
+  <strong>Foto:</strong>
+</p>
+<%= image_tag @coordinador.image_url(:medium) if @coordinador.image? %>
+
+
 
 <%= link_to 'Edit', edit_coordinador_path(@coordinador) %> |
 <%= link_to 'Back', coordinadors_path %>

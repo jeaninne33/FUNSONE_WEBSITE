@@ -1,4 +1,6 @@
-<%= form_for(@coordinador) do |f| %>
+<%= simple_form_for @coordinador, html: { class: 'form-horizontal',:multipart => true } do |f| %>
+
+
   <% if @coordinador.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@coordinador.errors.count, "error") %> prohibited this coordinador from being saved:</h2>
@@ -10,34 +12,31 @@
       </ul>
     </div>
   <% end %>
+    <%= f.file_field :image %>
+ 
+    <%= f.label :remote_image_url, "o URL de la imagen" %><br />
+    <%= f.input :remote_image_url %>
 
   <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.input :nombre %>
   </div>
   <div class="field">
-    <%= f.label :apellido %><br>
-    <%= f.text_field :apellido %>
+    <%= f.input :apellido %>
   </div>
   <div class="field">
-    <%= f.label :foto %><br>
-    <%= f.text_field :foto %>
+  <%= f.input :cargo %>
+</div>
+  <div class="field">
+    <%= f.input :twitter %>
   </div>
   <div class="field">
-    <%= f.label :twitter %><br>
-    <%= f.text_field :twitter %>
+    <%= f.input :facebook %>
   </div>
   <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
+    <%= f.input :correo %>
   </div>
   <div class="field">
-    <%= f.label :correo %><br>
-    <%= f.text_field :correo %>
-  </div>
-  <div class="field">
-    <%= f.label :linkd %><br>
-    <%= f.text_field :linkd %>
+    <%= f.input :linkd %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,0 +1,55 @@
+
+
+  <div class="column dt-sc-one-fourth first">
+      <div class="dt-sc-team-wrapper">
+          <h2>Nuestro Equipo</h2>
+          <p>La fundación Social Nueva Esparta, reune un grupo de trabajo de alto rendimiento, encabezado por la Msc. Dinorah Villasmil.</p>
+      </div><!-- **dt-sc-team-carousel - Ends** -->
+  </div>
+  <div class="column dt-sc-three-fourth">
+      <!-- **dt-sc-team-carousel-wrapper - Starts** -->
+      <div class="dt-sc-team-carousel-wrapper">
+          <div class="dt-sc-team-carousel">
+          
+              <% if !@coordinador.blank? %>
+                <% for item in @coordinador %>
+                      
+                     <%# @coordinador.inspect %>
+                     <div class="column dt-sc-one-fourth">
+                        <!-- **dt-sc-team - Starts** -->
+                        <div class="dt-sc-team">
+                            <div class="image"><%= image_tag item.image_url(:thumb) if item.image? %></div>
+                            <!-- **team-details - Starts** -->
+                            <div class="team-details">
+                                <h6><a href="#"><%= item.nombre + " "+ item.apellido %></a></h6>
+                                <p><%= item.cargo %></p>
+                            </div> <!-- **team-details - Ends** -->
+                            <!-- **dt-sc-social-icons - Starts** -->
+                            <ul class="dt-sc-social-icons">
+                                <li> <a href="#" title="twitter"> <span class="fa fa-twitter"></span>  </a> </li>
+                                <li> <a href="#" title="facebook"> <span class="fa fa-facebook"></span>  </a> </li>
+                                <li> <a href="#" title="linkedin"> <span class="fa fa-linkedin"></span>  </a> </li>
+                            </ul> <!-- **dt-sc-social-icons - Ends** -->
+                        </div><!-- **dt-sc-team - Ends** -->
+                    </div>
+
+
+                <% end %>
+              <% else %>
+                
+              <% end %>
+         </div>
+                  
+          <div class="carousel-arrows">
+              <a class="prev" href="#"><span class="fa fa-angle-left"></span> </a>
+              <a class="next" href="#"><span class="fa fa-angle-right"></span> </a>
+          </div>
+      
+      </div><!-- **dt-sc-team-carousel-wrapper - Ends** -->
+  </div>
+<div class="dt-sc-margin45"></div>
+<!-- One -->
+     
+
+                
+      

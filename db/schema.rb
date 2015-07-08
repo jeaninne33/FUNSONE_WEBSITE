@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626141040) do
+ActiveRecord::Schema.define(version: 20150702162205) do
 
   create_table "coordinadors", force: :cascade do |t|
     t.string   "nombre",     limit: 255
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20150626141040) do
     t.string   "linkd",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "image",      limit: 255
+    t.string   "cargo",      limit: 255
   end
 
 end

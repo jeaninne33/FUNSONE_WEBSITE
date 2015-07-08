@@ -1,28 +1,22 @@
 class CoordinadorsController < ApplicationController
   before_action :set_coordinador, only: [:show, :edit, :update, :destroy]
+  layout "administracion"
 
-  # GET /coordinadors
-  # GET /coordinadors.json
+
   def index
     @coordinadors = Coordinador.all
   end
 
-  # GET /coordinadors/1
-  # GET /coordinadors/1.json
   def show
   end
 
-  # GET /coordinadors/new
   def new
     @coordinador = Coordinador.new
   end
 
-  # GET /coordinadors/1/edit
   def edit
   end
 
-  # POST /coordinadors
-  # POST /coordinadors.json
   def create
     @coordinador = Coordinador.new(coordinador_params)
 
@@ -37,8 +31,6 @@ class CoordinadorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /coordinadors/1
-  # PATCH/PUT /coordinadors/1.json
   def update
     respond_to do |format|
       if @coordinador.update(coordinador_params)
@@ -51,8 +43,6 @@ class CoordinadorsController < ApplicationController
     end
   end
 
-  # DELETE /coordinadors/1
-  # DELETE /coordinadors/1.json
   def destroy
     @coordinador.destroy
     respond_to do |format|
@@ -62,13 +52,11 @@ class CoordinadorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_coordinador
       @coordinador = Coordinador.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def coordinador_params
-      params.require(:coordinador).permit(:nombre, :apellido, :foto, :twitter, :facebook, :correo, :linkd)
+      params.require(:coordinador).permit(:nombre, :apellido, :foto, :twitter, :facebook, :correo, :linkd,:image, :cargo, :remote_image_url )
     end
 end
