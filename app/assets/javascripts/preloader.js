@@ -3,7 +3,7 @@ var cWidth=128;
 var cHeight=128;
 var cTotalFrames=20;
 var cFrameWidth=128;
-var cImageSrc='sprites.png';
+//var cImageSrc='sprites.png';
 
 var cImageTimeout=false;
 var cIndex=0;
@@ -13,7 +13,7 @@ var SECONDS_BETWEEN_FRAMES=0;
 
 function startAnimation(){
 	
-	document.getElementById('loader-image').style.backgroundImage='url('+cImageSrc+')';
+	//document.getElementById('loader-image').style.backgroundImage='url('+cImageSrc+')';
 	document.getElementById('loader-image').style.width=cWidth+'px';
 	document.getElementById('loader-image').style.height=cHeight+'px';
 	
@@ -59,4 +59,4 @@ function imageLoader(s, fun)//Pre-loads the sprites image
 }
 
 //The following code starts the animation
-new imageLoader(cImageSrc, 'startAnimation()');
+//new imageLoader(cImageSrc, 'startAnimation()');

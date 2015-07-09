@@ -107,7 +107,7 @@
 #fancybox-loading div {
 	width: 44px;
 	height: 44px;
-	background: url('fancybox/fancybox_loading.gif') center center no-repeat;
+	/*background: url('fancybox/fancybox_loading.gif') center center no-repeat;*/
 }
 
 .fancybox-close {
@@ -127,7 +127,7 @@
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
-	background: transparent url('fancybox/blank.gif'); /* helps IE */
+	background: transparent url('fblank.gif'); /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
 }
