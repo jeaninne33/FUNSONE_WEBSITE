@@ -443,7 +443,7 @@ jQuery(document).ready(function($){
 	/* Tweets */
 	if( $('.tweets').length ){
 		$(".tweets").tweet({
-			modpath: 'js/twitter/',
+			modpath: 'twitter/',
 			username: "envato",
 			count: 1,
 			loading_text: "loading tweets...",
@@ -453,7 +453,7 @@ jQuery(document).ready(function($){
 	
 	if($('.tweet_list').length > 0) {	
 		$(".tweet_list").tweet({
-			modpath: 'js/twitter/',
+			modpath: 'twitter/',
 			username: "army",
 			count: 3,
 			loading_text: "loading tweets...",
@@ -463,7 +463,7 @@ jQuery(document).ready(function($){
 	
 	if($('.tweetbox .tweet_list').length > 0) {	
 		$(".tweetbox .tweet_list").tweet({
-			modpath: 'js/twitter/',
+			modpath: 'twitter/',
 			username: "christmas",
 			count: 3,
 			loading_text: "loading tweets...",
@@ -473,7 +473,7 @@ jQuery(document).ready(function($){
 	
 	if($('#tweets_container').length) {
 		$("#tweets_container").tweet({
-			modpath: 'js/twitter/',
+			modpath: 'twitter/',
 			username: "envato",
 			count: 3,
 			loading_text: "loading tweets...",
