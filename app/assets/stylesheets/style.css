@@ -620,7 +620,7 @@
 	#main-menu { float:right; margin:0px; padding:0px; }
 	#main-menu ul { margin:0px auto; padding:0px; position:relative; }
 	#main-menu > ul > li { display:inline-block; padding:0; position:relative; }
-	#main-menu > ul > li > a { font-size:14px; font-weight:600; text-transform:uppercase; display:block; padding:29px 21px 30px; color:#1e1e1e; position:relative; }
+	#main-menu > ul > li > a { font-size:14px; font-weight:600; text-transform:uppercase; display:block; padding:50px 21px 30px; color:#1e1e1e; position:relative; }
 	#main-menu > ul > li.current_page_item > a { border-right:1px dashed #ededed; border-left:1px dashed #ededed; }
 	#main-menu > ul > li.current_page_item:before { content:""; position:absolute; bottom:0; left:0; border-bottom:3px solid; width:100%; }
 	
