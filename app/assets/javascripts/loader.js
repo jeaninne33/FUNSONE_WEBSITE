@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 	var cHeight=128;
 	var cTotalFrames=20;
 	var cFrameWidth=128;
-	var cImageSrc='images/sprites.gif';
+	//var cImageSrc='sprites.png';
 	
 	var cImageTimeout=false;
 	var cIndex=0;
@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
 	
 	function startAnimation(){
 		
-		document.getElementById('loaderImage').style.backgroundImage='url('+cImageSrc+')';
+		//document.getElementById('loaderImage').style.backgroundImage='url('+cImageSrc+')';
 		document.getElementById('loaderImage').style.width=cWidth+'px';
 		document.getElementById('loaderImage').style.height=cHeight+'px';
 		
