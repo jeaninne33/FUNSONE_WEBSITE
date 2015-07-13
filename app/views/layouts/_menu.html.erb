@@ -42,7 +42,7 @@
         <div class="megamenu-child-container">
             <ul class="sub-menu">
                 <li class="menu-item-with-widget-area">
-                    <a href="#">Becas Estudiantiles</a>
+                    <%= link_to "Becas Estudiantiles",ayudas_sociales_path(1)  %>
                     <p>Becas Universitarias y Escolares</p>
                     <div class="menu-item-widget-area-container">
                         <ul>
@@ -58,11 +58,12 @@
                             </li>
                         </ul>
                     </div>
+                   
                 </li>
        
          <li class="menu-item-with-widget-area">
-                    <a href="#">Adultos Mayores</a>
-                    <p>Ayudas destinada al Adulto Mayor</p>
+                  <%= link_to "Adultos Mayores",ayudas_sociales_path(2)  %>
+                   <p>Ayudas destinada al Adulto Mayor</p>
                     <div class="menu-item-widget-area-container">
                         <ul>
                             <li class="widget widget_text">
@@ -80,7 +81,8 @@
                 </li>
 
                      <li class="menu-item-with-widget-area">
-                    <a href="#">Niños, Niñas y Adolescentes</a>
+                     <%= link_to "Niños, Niñas y Adolescentes",ayudas_sociales_path(3)  %>
+                  
                     <p>Ayudas destinada a los Niños, Niñas y Adolescentes</p>
                     <div class="menu-item-widget-area-container">
                         <ul>
@@ -98,7 +100,8 @@
                     </div>
                 </li>
                 <li class="menu-item-with-widget-area">
-                    <a href="#">Personas con discapacidad</a>
+                    <%= link_to "Personas con Discapacidad",ayudas_sociales_path(4)  %>
+                   
                     <p>Ayudas destinada a atender a la comunidad discapacitada</p>
                     <div class="menu-item-widget-area-container">
                         <ul>

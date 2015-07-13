@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :coordinadors
   get 'home/index' => 'home#index'
-  get 'home/ayudas_sociales' => 'home#ayudas_sociales'
+  get 'home/:id/ayudas_sociales' => 'home#ayudas_sociales', as: :ayudas_sociales
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

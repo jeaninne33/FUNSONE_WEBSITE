@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+       <th>Nombre</th>
       <th>Objetivo</th>
       <th>Requisito</th>
       <th>Tipo</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @tipos.each do |tipo| %>
       <tr>
+        <td><%= tipo.nombre_ayuda %></td>
         <td><%= tipo.objetivo %></td>
         <td><%= tipo.requisito %></td>
         <td><%= tipo.tipo %></td>

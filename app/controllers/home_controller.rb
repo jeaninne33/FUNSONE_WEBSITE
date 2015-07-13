@@ -7,6 +7,6 @@ layout 'home'
 	end
 
 	def ayudas_sociales
-		@ayudas = Tipo.all.order('created_at DESC')
+		@ayudas = Tipo.find(params[:id])
 	end
 end

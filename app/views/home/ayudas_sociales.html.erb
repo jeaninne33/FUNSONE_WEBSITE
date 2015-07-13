@@ -1,4 +1,29 @@
+<div class="dt-sc-margin65"></div>  
+            <!-- **Full-width-section - Starts** -->       
+  <div class="full-width-section">
+   <div class="container">
+     <h2 class="aligncenter">Coordinación de <%= @ayudas.nombre_ayuda %></h2>
+	     
+	    <%#= @ayudas.inspect %>
+	      <% if !@ayudas.blank? %>
+	         <h5>Objetivos de la Coordinación:</h5>
+	         <h6><p class="middle-align"><%= @ayudas.objetivo.html_safe %></p>	</h6>
+	         <br/>
+	         <h5>Requisitos de la Coordinación:</h5>
+	         <h6> <p class="middle-align"><%= @ayudas.requisito.html_safe %></p>	</h6>
+	          <h5>Contácto de la Coordinación:</h5>
+	         <h6> <p class="middle-align"><%= @ayudas.contactos.html_safe %></p>	</h6>
+	      <% else %>
+	             
+	      <% end %>
 
-<div class="dt-sc-hr-invisible"></div>
-<div class="dt-sc-margin65"></div>
-<div class="dt-sc-hr-invisible-small"></div>  
+
+
+
+
+
+    </div>
+  </div>
+</div> <!-- **Full-width-section - Ends** --> 
+
+ 
