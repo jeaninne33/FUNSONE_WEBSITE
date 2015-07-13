@@ -6,21 +6,19 @@
 	     
 	    <%#= @ayudas.inspect %>
 	      <% if !@ayudas.blank? %>
-	         <h5>Objetivos de la Coordinación:</h5>
+	         <a name="obj"><h5>Objetivos de la Coordinación:</h5>
 	         <h6><p class="middle-align"><%= @ayudas.objetivo.html_safe %></p>	</h6>
+	         </a>
 	         <br/>
-	         <h5>Requisitos de la Coordinación:</h5>
+	         <div id="requi"><h5>Requisitos de la Coordinación:</h5>
 	         <h6> <p class="middle-align"><%= @ayudas.requisito.html_safe %></p>	</h6>
-	          <h5>Contácto de la Coordinación:</h5>
+	         </div>
+	         <div id="contacto"> <h5>Contácto de la Coordinación:</h5>
 	         <h6> <p class="middle-align"><%= @ayudas.contactos.html_safe %></p>	</h6>
+	         </div>
 	      <% else %>
 	             
 	      <% end %>
-
-
-
-
-
 
     </div>
   </div>
