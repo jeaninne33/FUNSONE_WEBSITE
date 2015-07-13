@@ -5,21 +5,21 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="es-VE" class="no-js"> <!--<![endif]-->
 
 <html>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
-	<meta name="description" content="">
-	<meta name="author" content="">
-	
-	<!--[if lt IE 9]>
-	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	  
-	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+      
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
 
 <head>
-	<title>.::Fundación Social - Nueva Esparta::.</title>
+    <title>.::Fundación Social - Nueva Esparta::.</title>
   <%= csrf_meta_tags %>
  <%= stylesheet_link_tag 'style.css' %>
  <%= stylesheet_link_tag 'shortcodes.css' %>
@@ -44,8 +44,8 @@
 
 <!-- **Wrapper** -->
 <div class="wrapper"> 
-	<div class="inner-wrapper">
-    	
+    <div class="inner-wrapper">
+        
         <!-- **Top Bar** -->
         <div class="top-bar">
             <div class="container">
@@ -71,58 +71,49 @@
         </div><!-- **Top Bar - End** -->
                 
         <div id="header-wrapper">
-	        <!-- **Header** -->
-	        <header class="header">
-	        	<div class="container">
-	            
-	                <!-- **Logo - End** -->
-	                <div id="logo">
-	                    <a href="index.html" title="Priority"> <%= image_tag "logo1.png" %> </a>
-	                </div><!-- **Logo - End** -->
-	                
-	                
+            <!-- **Header** -->
+            <header class="header">
+                <div class="container">
+                
+                    <!-- **Logo - End** -->
+                    <div id="logo">
+                        <a href="index.html" title="Priority"> <%= image_tag "logo1.png" %> </a>
+                    </div><!-- **Logo - End** -->
+                    
+                    
                             <%= render "layouts/menu" %>
-	                   
-	
-	            </div>
-	        </header><!-- **Header - End** -->
+                       
+    
+                </div>
+            </header><!-- **Header - End** -->
         </div>
         
-		<!-- **Main - Starts** --> 
-		<div id="main">
-                <%= render "layouts/slider" %>
-                <%= render "layouts/calendario" %>
-                <%= render "layouts/ayudas" %>
-        <div class="dt-sc-hr-invisible"></div>
-  		<div class="dt-sc-margin65"></div>
-                <%= render "layouts/noticias" %>
-        <div class="dt-sc-hr-invisible-small"></div>  
-                <%= render "layouts/galeria" %>
-                <%= render "layouts/coordinadores"   %>     
-                <%= render "layouts/instituciones"   %>     
+        <!-- **Main - Starts** --> 
+        <div id="main">
+        <%=yield %>
         </div> <!-- **Main - Ends** --> 
-            	<%= render "layouts/footer"   %>     
+                <%= render "layouts/footer"   %>     
      
         
-	</div><!-- **inner-wrapper - End** -->
+    </div><!-- **inner-wrapper - End** -->
     
 </div><!-- **Wrapper - End** -->
 
-	<!-- **jQuery** -->  
+    <!-- **jQuery** -->  
     <%= javascript_include_tag 'jquery-1.10.2.min.js','jquery-migrate.min.js','preloader.js','pace.min.js' ,'jquery.tabs.min.js','jquery.tipTip.minified.js','jquery-easing-1.3.js' ,'jquery.parallax-1.1.3.js','jquery.inview.js' ,'jquery.viewport.js','jquery.nav.js','layerslider.transitions.js','layerslider.kreaturamedia.jquery.js','greensock.js' %>
 
 
     <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script><script data-cfasync="false" type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_9','jquery'); } else { lsjQuery("#layerslider_9").layerSlider({responsiveUnder: 1240, layersContainer: 1170, startInViewport: false, pauseOnHover: false, forceLoopNum: false, autoPlayVideos: false, skinsPath: 'assets/layerslider/skins/'}) } }); </script>
-	
+    
 
    <%= javascript_include_tag 'jquery.jcarousel.min.js' , 'jquery.carouFredSel-6.2.1-packed.js' , 'jquery.isotope.min.js', 'jquery.prettyPhoto.js', 'masonry.pkgd.min.js' , 'responsive-nav.js' , 'jquery.meanmenu.min.js' , 'jquery.tipTip.minified.js' %>
 
 
-	
-	<!-- **Sticky Nav** -->
-	<%= javascript_include_tag 'jquery.sticky.js','jquery.ui.totop.min.js','twitter/jquery.tweet.min.js','jquery.validate.min.js','custom.js' %>
     
-	<!-- **To Top** -->
+    <!-- **Sticky Nav** -->
+    <%= javascript_include_tag 'jquery.sticky.js','jquery.ui.totop.min.js','twitter/jquery.tweet.min.js','jquery.validate.min.js','custom.js' %>
+    
+    <!-- **To Top** -->
   
 
 </body>

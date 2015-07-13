@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  objetivo: MyText
+  requisito: MyText
+  tipo: MyText
+  contactos: MyText
+
+two:
+  objetivo: MyText
+  requisito: MyText
+  tipo: MyText
+  contactos: MyText

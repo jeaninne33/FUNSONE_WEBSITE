@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+
+
+<strong>Nombre de la ayuda:</strong>
+
+<%= @tipo.nombre_ayuda %>
+</p>
+<p>
+  <strong>Objetivo:</strong>
+  <%= @tipo.objetivo.html_safe %>
+</p>
+
+<p>
+  <strong>Requisito:</strong>
+  <%= @tipo.requisito %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @tipo.tipo %>
+</p>
+
+<p>
+  <strong>Contactos:</strong>
+  <%= @tipo.contactos %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_path(@tipo) %> |
+<%= link_to 'Back', tipos_path %>
