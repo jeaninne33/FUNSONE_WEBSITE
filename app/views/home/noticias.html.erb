@@ -1,0 +1,67 @@
+<div id="main">
+        	<div class="parallax full-width-bg">
+            	<div class="container">
+                	<div class="main-title">
+                    	<h1>Noticias</h1>
+                        <div class="breadcrumb">
+                            <%= link_to "Inicio", root_path   %>
+                            <span class="fa fa-angle-right"></span>
+                           <%= link_to "Noticias" , noticias_path %>
+                            <span class="fa fa-angle-right"></span>
+                            <span class="current">Todas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-sc-margin100"></div>
+			<!-- Container starts-->
+			<div class="container">
+				<!-- Primary Starts -->
+				<section id="primary" class="content-full-width">
+              <% if !@noticias.blank? %>
+                <% for item in @noticias %>
+
+
+                    <!-- **Blog-post - Starts** -->
+                    <article class="blog-post type3">
+                        <!-- **entry-meta - Starts** -->
+                        <div class="entry-meta">
+                            <div class="date">
+                                <p><span><%= item.created_at.strftime("%d")%></span><br/><%= item.created_at.strftime("%B")%></p>
+                            </div>
+                            <div class="post-comments">
+                                <a href="#"><span class="fa fa-comment"></span>12</a>
+                            </div>
+                        </div> <!-- **entry-meta - Ends** -->
+                        <!-- **entry-thumb - Starts** -->
+                        <div class="entry-thumb">
+                           <%= link_to single_noticia_path(item.id) do %><%= image_tag item.foto_url(:large) if item.foto? %><% end %>
+                        </div> <!-- **entry-thumb - Ends** -->
+                        <!-- **entry-detail - Starts** -->
+                        <div class="entry-detail">
+                            <div class="entry-title">
+                            	<h4>  <%= link_to single_noticia_path(item.id) do %><%= item.titulo %><% end %></h4>
+                            </div>
+                            <!-- **entry-meta-data - Starts** -->
+                            <div class="entry-meta-data">
+                                <p><span class="fa fa-clock-o"> </span> Fecha: <%= item.created_at.strftime("%m %B %Y") %> -Hora: <%= item.created_at.strftime("%l:%M %P") %></p>
+                                <p><span class="fa fa-tag"> </span> Categoria: <%= item.categoria %></p>
+                            </div> <!-- **entry-meta-data - Ends** -->
+                            <div class="entry-body">
+                            	<p ><%= truncate(item.mensaje, :length => 300, :omission => "", :escape =>false) %>...<%= link_to "ver mas", single_noticia_path(item.id) %></p>
+                            </div>
+                        </div> <!-- **entry-detail - Ends** -->
+                    </article><!-- **Blog-post - Ends** -->
+
+
+
+                 <% end %>
+                    <% else %>
+
+                    <% end %>
+
+                </section> <!-- **Primary - Ends** -->
+                <div class="dt-sc-hr-invisible"></div>
+            </div> <!-- **container - Ends** -->
+
+        </div> <!-- **Main - Ends** -->

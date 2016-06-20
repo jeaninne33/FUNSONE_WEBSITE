@@ -1,0 +1,15 @@
+<%= simple_form_for @painting , html: { class: 'form-horizontal',:multipart => true } do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+     <%= '       Los Campos con (*) son Obligatorios!' %><br>
+     </div>
+ <%= f.hidden_field :gallery_id  %>
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :foto , type:' field'  , label: 'Imagen:'  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,122 @@
+<!-- **Main - Starts** -->
+<div id="main">
+  <div class="parallax full-width-bg">
+      <div class="container">
+          <div class="main-title">
+              <h1>Detalle Noticia</h1>
+                <div class="breadcrumb">
+                        <%= link_to "Inicio", root_path   %>
+                    <span class="fa fa-angle-right"></span>
+                   <%= link_to "Noticias" , noticias_path %>
+                    <span class="fa fa-angle-right"></span>
+                    <span class="current"><%= @noticia.titulo%></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dt-sc-margin100"></div>
+<!-- Container starts-->
+<div class="container">
+<!-- Primary Starts -->
+<section id="primary" class="with-right-sidebar page-with-sidebar">
+
+            <!-- **Blog-post - Starts** -->
+            <article class="blog-post type3">
+                <!-- **entry-meta - Starts** -->
+                <div class="entry-meta">
+                    <div class="date">
+                        <p><%= @noticia.created_at.strftime("%d")%></span><br/><%= @noticia.created_at.strftime("%B")%></p>
+                    </div>
+                    <div class="post-comments">
+                        <a href="#"><span class="fa fa-comment"></span>12</a>
+                    </div>
+                </div> <!-- **entry-meta - Ends** -->
+                <!-- **entry-thumb - Starts** -->
+                <div class="entry-thumb">
+                   <%= link_to @noticia.foto_url do %><%= image_tag @noticia.foto_url(:large) if @noticia.foto? %><% end %>
+                </div> <!-- **entry-thumb - Ends** -->
+                <!-- **entry-detail - Starts** -->
+                <div class="entry-detail">
+                  <div class="entry-title">
+                      <h4><%= @noticia.titulo%></h4>
+                    </div>
+                    <!-- **entry-meta-data - Starts** -->
+                    <div class="entry-meta-data">
+                      <p><span class="fa fa-clock-o"> </span> Fecha: <%= @noticia.created_at.strftime("%m %B %Y") %> -Hora: <%= @noticia.created_at.strftime("%l:%M %P") %></p>
+                        <p><span class="fa fa-tag"> </span> Categoria: <%= @noticia.categoria %></p>
+                    </div> <!-- **entry-meta-data - Ends** -->
+                    <div class="entry-body">
+
+                      <p style="text-align: justify;"><%= @noticia.mensaje %></p>
+
+                    </div>
+
+                </div> <!-- **entry-detail - Ends** -->
+            </article><!-- **Blog-post - Ends** -->
+
+
+
+
+        </section> <!-- **Primary - Ends** -->
+        <!-- **secondary - Starts** -->
+        <section id="secondary-right" class="secondary-sidebar secondary-has-right-sidebar">
+
+            <aside class="widget widget_categories">
+                <h4 class="widgettitle">Blog Categories</h4>
+                <ul>
+                    <li> <a href="#">Internet Trends</a>  </li>
+                    <li> <a href="#">Web Design</a> </li>
+                    <li> <a href="#">Wordpress</a> </li>
+                    <li> <a href="#">Web Development</a> </li>
+                    <li> <a href="#">Illustration</a> </li>
+                    <li> <a href="#">UI Design</a> </li>
+                    <li> <a href="#">App Development</a> </li>
+                </ul>
+            </aside>
+            <aside class="widget widget_recent_entries" id="my_recent_posts-3">
+                <h4 class="widgettitle"><span>Recent Posts</span></h4>
+                <div class="recent-posts-widget">
+                    <ul>
+                        <li>
+                            <div class="thumb">
+                              <a href="#" title=""> <img src="http://www.placehold.it/85x85&text=Blog" alt="image" title=""/></a>
+                            </div>
+                            <h4><a href="#">Holy Motors - A review of best old machines</a></h4>
+                            <!-- **entry-meta-data - Starts** -->
+                            <div class="entry-meta-data">
+                                <p><span class="fa fa-calendar"> </span> 04 Jan 2014 </p>
+                                <p><a href="#"><span class="fa fa-comment"> </span> 16 </a></p>
+                            </div> <!-- **entry-meta-data - Ends** -->
+                        </li>
+                        <li>
+                            <div class="thumb">
+                              <a href="#" title=""> <img src="http://www.placehold.it/85x85&text=Blog" alt="image" title=""/></a>
+                            </div>
+                            <h4><a href="#">Concept based theme with various features</a></h4>
+                            <!-- **entry-meta-data - Starts** -->
+                            <div class="entry-meta-data">
+                                <p><span class="fa fa-calendar"> </span> 03 Aug 2014 </p>
+                                <p><a href="#"><span class="fa fa-comment"> </span> 20 </a></p>
+                            </div> <!-- **entry-meta-data - Ends** -->
+                        </li>
+                        <li>
+                            <div class="thumb">
+                              <a href="#" title=""> <img src="http://www.placehold.it/85x85&text=Blog" alt="image" title=""/></a>
+                            </div>
+                            <h4><a href="#">Colors inspired from Nature </a></h4>
+                            <!-- **entry-meta-data - Starts** -->
+                            <div class="entry-meta-data">
+                                <p><span class="fa fa-calendar"> </span> 15 Sep 2014 </p>
+                                <p><a href="#"><span class="fa fa-comment"> </span> 24 </a></p>
+                            </div> <!-- **entry-meta-data - Ends** -->
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+
+
+        </section> <!-- **secondary - Ends** -->
+    </div> <!-- **container - Ends** -->
+
+</div> <!-- **Main - Ends** --> 

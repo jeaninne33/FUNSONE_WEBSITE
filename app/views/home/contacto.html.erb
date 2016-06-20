@@ -1,0 +1,99 @@
+
+<%#= params['contacto'].inspect %>
+
+<div id="main">
+        	<div class="parallax full-width-bg">
+            	<div class="container">
+                	<div class="main-title">
+                    	<h1>Contactos</h1>
+                        <div class="breadcrumb">
+                           <%= link_to "Inicio", root_path   %>
+                            <span class="fa fa-angle-right"></span>
+                            <span class="current">Contactos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-sc-margin100"></div>
+            <!-- Container starts-->
+
+
+			<div class="container">
+                <!-- Primary Starts -->
+                <section id="primary" class="content-full-width">
+                    <div class="column dt-sc-three-fourth first">
+                         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=zK0d8XdzO34s.krfx5E3LqLb8" width="840" height="520"></iframe>
+                    </div>
+
+                    <div class="column dt-sc-one-fourth">
+                    	<h3>Información de Contacto</h3>
+                        <div class="dt-sc-margin35"></div>
+                    	<p class="dt-sc-contact-detail"> Estamos localizados en la Asunción, Estado Nueva Esparta; atendiendo a toda la comunidad neoespartana.
+                       Envianos un correo electrónico o llámenos si esta necesitando alguna ayuda. </p>
+                            <!-- **dt-sc-contact-info - Starts** -->
+                            <div class="dt-sc-contact-info">
+                                <p> <i class="fa fa-location-arrow"></i> Calle Independencia con calle Cedeño, detrás de la residencia de Gobernadores </p>
+                                <p> <i class="fa fa-phone"></i> 0295-2424168 </p>
+                                <p> <i class="fa fa-globe"></i><%= link_to "www.funsone.org.ve", 'http://www.funsone.org.ve/', target:"_blank" %> </p>
+                                <p> <i class="fa fa-envelope"></i> <a href="#">atencion.funsone@gmail.com</a> </p>
+                                <p><i class="fa fa-clock-o"></i>Horario de atención: Lunes a Viernes. <br/> Turno Mañana: de 8:00am a 12:00m<br/> Turno Tarde: de 1:00pm a 3:30pm</p>
+
+                            </div> <!-- **dt-sc-contact-info - Ends** -->
+                    </div>
+                    <div class="dt-sc-margin35"></div>
+
+
+                    <div class="column dt-sc-three-fourth first">
+                      <% if flash[:notice] %>
+                          <br/>
+                              <div class="notice">
+                                <div class="<%= 'alert alert-success' if !flash[:notice].blank? %>"><strong><%= flash[:notice] %><strong/>
+                                </div><br/>
+                                </div>
+
+                        <% end %>
+                        <div class="hr-title dt-sc-margin25">
+                            <h3>Envianos un Mensaje</h3>
+                            <div class="title-sep">
+
+                            </div>
+                        </div>
+
+                        <%= form_tag( contacto_path  , :method => "get", id: "search-form", :html=> { class: 'form-horizontal',:multipart => true, :novalidate => false  }) do %>
+                        <%#= simple_form_for :contacto, url: contacto_path , html: { class: 'form-horizontal', :novalidate => false }, :method => :get do |f| %>
+
+                            <div class="column dt-sc-one-third first">
+                                <p> <span> <%= text_field_tag :nombre, nil, :placeholder=>"Nombre y Apellido*", required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+                                  <%#= f.input :nombre, :placeholder=>"Nombre y Apellido*", require: :true%>
+                                   </span> </p>
+                            </div>
+                            <div class="column dt-sc-one-third">
+                                <p> <span><%= email_field_tag :email, nil, :placeholder=>"Correo*" , oninvalid: "this.setCustomValidity('Por favor incluye un @ en tu correo')", required: true,  oninput: "setCustomValidity('')"%>
+                                  <%#= f.input :email, :placeholder=>"Correo*", require: :true %>
+                                </span> </p>
+                            </div>
+
+                            <div class="column dt-sc-one-third">
+                                <p> <span><%= telephone_field_tag :tlf ,nil, :placeholder=>"Telefono" %>
+                                  <%#= f.input :tlf ,label:"Telefono:", :placeholder=>"Telefono" %>
+                                </span> </p>
+                            </div>
+
+                                <div class="column dt-sc-one-third"><span> </span>  </div>
+                                <p>  <%= text_area_tag :msj, nil, cols:4, rows:8,  :placeholder=>"Mensaje*", required: true  , oninvalid: "this.setCustomValidity('Campo Obligatorio')" , oninput: "setCustomValidity('')"%>
+                              <%#= f.text_area  :msj, :placeholder=>"Mensaje*",label:"mensaje:", require: :true %>   </p>
+
+
+                            <p><%= submit_tag  ' Enviar Mensaje'%>
+                              <%#= f.button :submit,  "Enviar Mensaje"  <i class="fa fa-envelope"></i> %>
+
+                            </p>
+                        <% end %>
+
+
+                    </div>
+                    <div class="dt-sc-margin80"></div>
+                </section>
+
+			</div> <!-- **container - Ends** -->
+        </div> <!-- **Main - Ends** -->

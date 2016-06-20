@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @institucion.nombre.html_safe %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @institucion.descripcion.html_safe %>
+</p>
+
+<p>
+  <strong>Mision:</strong>
+  <%= @institucion.mision.html_safe %>
+</p>
+
+<p>
+  <strong>Vision:</strong>
+  <%= @institucion.vision.html_safe %>
+</p>
+<p>
+  <strong>Objetivos:</strong>
+  <%= @institucion.objetivos.html_safe %>
+</p>
+
+<p>
+  <strong>Organigrama:</strong>
+  <%= image_tag  @institucion.organigrama_url(:medium) if @institucion.organigrama? %>
+</p>
+
+<p>
+  <strong>logo:</strong>
+  <%= image_tag  @institucion.logo_url(:thumb) if @institucion.logo? %>
+</p>
+
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @institucion.tipo %>
+</p>
+
+<p>
+  <strong>Foto1:</strong>
+  <%= image_tag  @institucion.foto1_url(:thumb) if @institucion.foto1? %>
+</p>
+
+<p>
+  <strong>Foto2:</strong>
+  <%= image_tag  @institucion.foto2_url(:thumb) if @institucion.foto2? %>
+</p>
+
+<p>
+  <strong>Foto3:</strong>
+  <%= image_tag  @institucion.foto3_url(:thumb) if @institucion.foto3? %>
+</p>
+
+<p>
+  <strong>Foto4:</strong>
+  <%= image_tag  @institucion.foto4_url(:thumb) if @institucion.foto4? %>
+</p>
+
+<p>
+  <strong>Foto5:</strong>
+  <%= image_tag  @institucion.foto5_url(:thumb) if @institucion.foto5? %>
+</p>
+
+<%= link_to 'Editar', edit_institucion_path(@institucion) %> |
+<%= link_to 'Atrás', institucions_path %>

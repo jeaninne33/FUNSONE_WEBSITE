@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<% params[:gallery_id] %>
+ <% @id= @painting.gallery_id %>
+ <% @galeria = Gallery.where(:id=>@id).pluck('nombre') %>
+
+
+
+<p>
+  <strong>Gallery:</strong>
+  <%= @galeria[0] %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @painting.nombre %>
+</p>
+<p>
+  <strong>Foto:</strong>
+<p><%= image_tag @painting.foto_url(:thumb) if @painting.foto? %></p>
+</p>
+
+<%= link_to 'Editar', edit_painting_path(@painting) %> |
+<%= link_to 'Atrás', paintings_path %>

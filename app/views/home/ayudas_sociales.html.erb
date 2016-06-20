@@ -1,27 +1,111 @@
-<div class="dt-sc-margin65"></div>  
-            <!-- **Full-width-section - Starts** -->       
-  <div class="full-width-section">
-   <div class="container">
-     <h2 class="aligncenter">Coordinación de <%= @ayudas.nombre_ayuda %></h2>
-	     
-	    <%#= @ayudas.inspect %>
-	      <% if !@ayudas.blank? %>
-	         <a name="obj"><h5>Objetivos de la Coordinación:</h5>
-	         <h6><p class="middle-align"><%= @ayudas.objetivo.html_safe %></p>	</h6>
-	         </a>
-	         <br/>
-	         <div id="requi"><h5>Requisitos de la Coordinación:</h5>
-	         <h6> <p class="middle-align"><%= @ayudas.requisito.html_safe %></p>	</h6>
-	         </div>
-	         <div id="contacto"> <h5>Contácto de la Coordinación:</h5>
-	         <h6> <p class="middle-align"><%= @ayudas.contactos.html_safe %></p>	</h6>
-	         </div>
-	      <% else %>
-	             
-	      <% end %>
+<% if !@ayudas.blank? %>
 
-    </div>
-  </div>
-</div> <!-- **Full-width-section - Ends** --> 
+	<div class=" parallax full-width-bg">
+            	<div class="container">
+                	<div class="main-title">
+                    	<h1>Coordinación de <%= @ayudas.last.nombre_ayuda %></h1>
+                        <div class="breadcrumb">
+													<%= link_to "Ayudas Sociales", ayudas_path %>
+                            <span class="fa fa-angle-right"></span>
+                             <%= @ayudas.last.nombre_ayuda %>
+                            <span class="fa fa-angle-right"></span>
+                            <span class="current">Detalles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- **Full-width-section - Starts** -->
+			<div class="full-width-section grey1">
+				<div class="dt-sc-margin70"></div>
+                <div class="container">
+                    <div class="hr-title dt-sc-hr-invisible-small">
+                            <h3>Descripción de la coordinación </h3>
+                            <div class="title-sep">	 </div>
+                    </div>
+                    <!-- **column - Starts** -->
+                    <div class="column dt-sc-three-fifth first">
+                    	<p><%= @ayudas.last.descripcion.html_safe %></p>
+ 						<div class="dt-sc-margin25"></div>
+                        <div class="dt-sc-margin25"></div>
+                    </div> <!-- **column - Ends** -->
+                    <!-- **column - Starts** -->
+                    <div class="column dt-sc-two-fifth">
+                    	<!-- **recent-gallery-container - Starts** -->
+                        <div class="recent-gallery-container">
+                            <!-- **recent-gallery - Starts** -->
+                            <ul class="recent-gallery">
+															<li> <%= image_tag  @ayudas.last.foto1_url(:medium) if @ayudas.last.foto1? %>  </li>
+															<li> <%= image_tag  @ayudas.last.foto2_url(:medium) if @ayudas.last.foto2? %>  </li>
+															<li> <%= image_tag  @ayudas.last.foto3_url(:medium) if @ayudas.last.foto3? %>  </li>
+															<li> <%= image_tag  @ayudas.last.foto4_url(:medium) if @ayudas.last.foto4? %> </li>
+														  </ul> <!-- **recent-gallery - Ends** -->
+                            <!-- **bx-pager - Starts** --><a id="obj"></a>
+                            <div id="bx-pager">
+															<a href="#" data-slide-index='0'><li><%= image_tag  @ayudas.last.foto1_url(:thumb) if @ayudas.last.foto1? %> </li></a>
+															<a href="#" data-slide-index='1'><li><%= image_tag  @ayudas.last.foto2_url(:thumb) if @ayudas.last.foto2? %> </li></a>
+															<a href="#" data-slide-index='2'><li><%= image_tag  @ayudas.last.foto3_url(:thumb) if @ayudas.last.foto3? %> </li></a>
+															<a href="#" data-slide-index='3'><li> <%= image_tag  @ayudas.last.foto4_url(:thumb) if @ayudas.last.foto4? %>  </li></a>
+														                      </div> <!-- **bx-pager - Ends** -->
+                        </div><!-- **recent-gallery-container - Ends** -->
 
- 
+                    </div> <!-- **column - Ends** -->
+
+                </div> <!-- **container - Ends** -->
+                <div class="dt-sc-margin50"></div>
+            </div><!-- **Full-width-section - Ends** -->
+
+
+					<!-- **Full-width-section - Starts** -->
+		<div class="full-width-section"><a id="tipo"></a>
+						<div class="dt-sc-margin10"></div>
+							<div class="container">
+									<!-- **column - Starts**-->
+									<div class="column dt-sc-one-half first">
+
+							</div>
+											<!-- **dt-sc-toggle-frame-set - Starts**  dt-sc-toggle-frame-set-->
+											<table border="3" with="600px">
+													<div class="">
+													<h5 class="dt-sc-toggle-accordion"> Objetivos</h5>
+													<div class=>
+
+
+														<%= @ayudas.last.objetivo.html_safe %>
+
+
+													</div>
+													<div class="dt-sc-margin10"></div>
+													<h5 class="dt-sc-toggle-accordion "> Tipos de Ayudas y Requisitos</h5>
+													<div class="">
+
+
+														<%= @ayudas.last.requisito.html_safe %><a id="con"></a>
+													</div>
+													<div class="dt-sc-margin10"></div>
+													<h5 class="dt-sc-toggle-accordion "> Contacto</h5>
+													<div class="">
+
+														<%= @ayudas.last.contactos.html_safe %>
+
+													</div>
+													<div class="dt-sc-margin10"></div>
+													<h5 class="dt-sc-toggle-accordion "> Solicitud en Línea</h5>
+													<div class="">
+
+																  <div class="column dt-sc-one-third"><span> </span>  </div>
+
+													</div>
+													<div class="dt-sc-margin10"></div>
+
+					</div> <!-- **dt-sc-toggle-frame-set - Ends** -->
+				</table>
+					</div> <!-- **column - Ends** -->
+
+
+
+							</div> <!-- **container - Ends** -->
+							<div class="dt-sc-hr-invisible-small"></div>
+					</div> <!-- **Full-width-section - Ends** -->
+
+
+						<% end %>

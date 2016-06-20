@@ -7,20 +7,21 @@
 <html>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
+
+
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
+
 	<!--[if lt IE 9]>
 	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	  
+
 	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
 
 <head>
 	<title>.::Fundación Social - Nueva Esparta::.</title>
   <%= csrf_meta_tags %>
+	  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
  <%= stylesheet_link_tag 'style.css' %>
  <%= stylesheet_link_tag 'shortcodes.css' %>
  <%= stylesheet_link_tag 'layerslider.css' %>
@@ -30,11 +31,13 @@
  <%= stylesheet_link_tag 'animations.css' %>
  <%= stylesheet_link_tag 'font-awesome.min.css' %>
  <%= stylesheet_link_tag 'skyblue/style.css'%>
-<%= stylesheet_link_tag 'font.css'%>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <%= stylesheet_link_tag 'font.css'%>
+ <%#= stylesheet_link_tag 'bootstrap.min.css'%>
 
-    <!--link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>  
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'--> 
+
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'-->
 </head>
 
 
@@ -43,18 +46,18 @@
 
 
 <!-- **Wrapper** -->
-<div class="wrapper"> 
+<div class="wrapper">
 	<div class="inner-wrapper">
-    	
+
         <!-- **Top Bar** -->
         <div class="top-bar">
             <div class="container">
-            
+
                 <ul class="top-menu">
                     <li> <i class="fa fa-phone"></i>  Alguna consulta? Llamanos: <span> 0295-2424168</span></li>
                     <li> <i class="fa fa-envelope"></i>  Correo: <a href="#" title="Design Themes"> atencion.funsone@gmail.com </a></li>
                 </ul>
-                
+
                 <div class="top-right">
                 <%= image_tag "banner_pueblo.png"%>
                     <!--<span>Socializa con nosotros</span>
@@ -66,64 +69,92 @@
                         <li> <a href="#" title="youtube"> <i class="fa fa-youtube"></i>  </a> </li>
                     </ul><-->
                 </div>
-                
+
             </div>
         </div><!-- **Top Bar - End** -->
-                
+
         <div id="header-wrapper">
 	        <!-- **Header** -->
 	        <header class="header">
 	        	<div class="container">
-	            
+
 	                <!-- **Logo - End** -->
 	                <div id="logo">
 	                    <a href="index.html" title="Priority"> <%= image_tag "logo1.png" %> </a>
 	                </div><!-- **Logo - End** -->
-	                
-	                
+
+
                             <%= render "layouts/menu" %>
-	                   
-	
+
+
 	            </div>
 	        </header><!-- **Header - End** -->
         </div>
-        
-		<!-- **Main - Starts** --> 
-		<div id="main">
-                <%= render "layouts/slider" %>
-                <%= render "layouts/calendario" %>
-                <%= render "layouts/ayudas" %>
-        <div class="dt-sc-hr-invisible"></div>
-  		<div class="dt-sc-margin65"></div>
-                <%= render "layouts/noticias" %>
-        <div class="dt-sc-hr-invisible-small"></div>  
-                <%= render "layouts/galeria" %>
-                <%= render "layouts/coordinadores"   %>     
-                <%= render "layouts/instituciones"   %>     
-        </div> <!-- **Main - Ends** --> 
-            	<%= render "layouts/footer"   %>     
-     
-        
-	</div><!-- **inner-wrapper - End** -->
-    
-</div><!-- **Wrapper - End** -->
 
-	<!-- **jQuery** -->  
-    <%= javascript_include_tag 'jquery-1.10.2.min.js','jquery-migrate.min.js','preloader.js','pace.min.js' ,'jquery.tabs.min.js','jquery.tipTip.minified.js','jquery-easing-1.3.js' ,'jquery.parallax-1.1.3.js','jquery.inview.js' ,'jquery.viewport.js','jquery.nav.js','layerslider.transitions.js','layerslider.kreaturamedia.jquery.js','greensock.js' %>
+		<!-- **Main - Starts** -->
+		<div id="main">
+
+
+
+                       <div class="full-width-section"><a id="tipo"></a>
+                                    <div class="dt-sc-margin10"></div>
+                                        <div class="container">
+                                                <!-- **column - Starts**-->
+                                       <div class="column dt-sc-one-half first">
+
+                                    </div>
+
+            <table border="3" with="600px">
+
+            <div class="dt-sc-margin10"></div>
+                    <h5 class="dt-sc-toggle-accordion "> Solicitud en Línea </h5>
+                    <div class="row">
+                                <% flash.each do |type, content| %>
+                                <% if content.respond_to?('each')
+                                    content.each do |item| %>
+                                <%= render 'layouts/alert',
+                                            type: type,
+                                            content: item %>
+                                <% end %>
+                              <% else %>
+                                <%= render 'layouts/alert',
+                                            type: type,
+                                            content: content %>
+                                <% end %>
+
+                                <% end %>
+
+
+         <%=yield %>
+                         </div>
+                         </div>
+                </table>
+               </div>
+            </div>
+        </div> <!-- **Main - Ends** -->
+            	<%= render "layouts/footer"   %>
+
+
+	</div><!-- **inner-wrapper - End** -->
+
+</div><!-- **Wrapper - End** -->
+<%= javascript_include_tag 'application' %>
+	<!-- **jQuery** -->
+    <%#= javascript_include_tag 'jquery-1.10.2.min.js','jquery-migrate.min.js','preloader.js','pace.min.js' ,'jquery.tabs.min.js','jquery.tipTip.minified.js','jquery-easing-1.3.js' ,'jquery.parallax-1.1.3.js','jquery.inview.js' ,'jquery.viewport.js','jquery.nav.js','layerslider.transitions.js','layerslider.kreaturamedia.jquery.js','greensock.js' %>
 
 
     <script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script><script data-cfasync="false" type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_9','jquery'); } else { lsjQuery("#layerslider_9").layerSlider({responsiveUnder: 1240, layersContainer: 1170, startInViewport: false, pauseOnHover: false, forceLoopNum: false, autoPlayVideos: false, skinsPath: 'assets/layerslider/skins/'}) } }); </script>
-	
-
-   <%= javascript_include_tag 'jquery.jcarousel.min.js' , 'jquery.carouFredSel-6.2.1-packed.js' , 'jquery.isotope.min.js', 'jquery.prettyPhoto.js', 'masonry.pkgd.min.js' , 'responsive-nav.js' , 'jquery.meanmenu.min.js' , 'jquery.tipTip.minified.js' %>
 
 
-	
+   <%#= javascript_include_tag 'jquery.jcarousel.min.js' , 'jquery.carouFredSel-6.2.1-packed.js' , 'jquery.isotope.min.js', 'jquery.prettyPhoto.js', 'masonry.pkgd.min.js' , 'responsive-nav.js' , 'jquery.meanmenu.min.js' , 'jquery.tipTip.minified.js' %>
+
+
+
 	<!-- **Sticky Nav** -->
-	<%= javascript_include_tag 'jquery.sticky.js','jquery.ui.totop.min.js','twitter/jquery.tweet.min.js','jquery.validate.min.js','custom.js' %>
-    
+	<%#= javascript_include_tag 'jquery.sticky.js','jquery.ui.totop.min.js','twitter/jquery.tweet.min.js','jquery.validate.min.js','custom.js' %>
+
 	<!-- **To Top** -->
-  
+
 
 </body>
 </html>

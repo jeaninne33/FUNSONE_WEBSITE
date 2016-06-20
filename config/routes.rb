@@ -1,9 +1,28 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
+  resources :institucions
+
+  resources :noticia
+
+  resources :paintings
+
+  resources :galleries
+
   resources :tipos
 
   resources :coordinadors
+  
   get 'home/index' => 'home#index'
   get 'home/:id/ayudas_sociales' => 'home#ayudas_sociales', as: :ayudas_sociales
+  get 'home/ayudas' => 'home#ayudas', as: :ayudas
+  get 'home/contacto' => 'home#contacto', as: :contacto
+  get 'home/quienes_somos'=> 'home#quienes_somos', as: :quienes_somos
+  get 'home/noticias'=> 'home#noticias', as: :noticias
+  get 'home/galerias'=> 'home#galerias', as: :galerias
+  get 'home/:id/single_noticia'=>'home#single_noticia', as: :single_noticia
+  get 'home/:id/single_galeria'=>'home#single_galeria', as: :single_galeria
+  get 'home/pazyvida'=> 'home#pazyvida', as: :pazyvida
+  get 'home/:id/solicitud'=> 'home#solicitud', as: :solicitud
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

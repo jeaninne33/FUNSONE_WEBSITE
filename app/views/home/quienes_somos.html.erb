@@ -1,0 +1,107 @@
+<div class=" parallax full-width-bg">
+            <div class="container">
+              <a id="funda"></a>
+                <div class="main-title">
+                    <h1>Fundación Social Nueva Esparta</h1>
+                    <div class="breadcrumb">
+                        <a href="index.html">Quienes Somos</a>
+                        <span class="fa fa-angle-right"></span>
+                        <span class="current">La Fundación</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- **Full-width-section - Starts** -->
+        <div class="full-width-section grey1">
+            <div class="dt-sc-margin70"></div>
+            <div class="container">
+                <div class="hr-title dt-sc-hr-invisible-small">
+                        <h3>Quienes Somos </h3>
+                        <div class="title-sep"> </div>
+                </div>
+                <!-- **column - Starts** -->
+                <div class="column dt-sc-three-fifth first">
+                  <%= @resul.last.descripcion.html_safe %>                        <div class="dt-sc-margin25"></div>
+
+                </div> <!-- **column - Ends** -->
+                <!-- **column - Starts** -->
+                <div class="column dt-sc-two-fifth">
+                    <!-- **recent-gallery-container - Starts** -->
+                    <div class="recent-gallery-container">
+                        <!-- **recent-gallery - Starts** -->
+                        <ul class="recent-gallery">
+                          <li> <%= image_tag  @resul.last.foto1_url(:medium) if @resul.last.foto1? %>  </li>
+                          <li> <%= image_tag  @resul.last.foto2_url(:medium) if @resul.last.foto2? %>  </li>
+                          <li> <%= image_tag  @resul.last.foto3_url(:medium) if @resul.last.foto3? %>  </li>
+                          <li> <%= image_tag  @resul.last.foto4_url(:medium) if @resul.last.foto4? %> </li>
+                        </ul> <!-- **recent-gallery - Ends** -->
+                        <a id="mision"></a>
+                        <!-- **bx-pager - Starts** -->
+                        <div id="bx-pager">
+                          <a href="#" data-slide-index='0'><li><%= image_tag  @resul.last.foto1_url(:thumb) if @resul.last.foto1? %> </li></a>
+                          <a href="#" data-slide-index='1'><li><%= image_tag  @resul.last.foto2_url(:thumb) if @resul.last.foto2? %> </li></a>
+                          <a href="#" data-slide-index='2'><li><%= image_tag  @resul.last.foto3_url(:thumb) if @resul.last.foto3? %> </li></a>
+                          <a href="#" data-slide-index='3'><li> <%= image_tag  @resul.last.foto4_url(:thumb) if @resul.last.foto4? %>  </li></a>
+                        </div> <!-- **bx-pager - Ends** -->
+                    </div><!-- **recent-gallery-container - Ends** -->
+
+                </div> <!-- **column - Ends** -->
+                <a id="vision"></a>
+            </div> <!-- **container - Ends** -->
+
+            <div class="dt-sc-margin50"></div>
+        </div><!-- **Full-width-section - Ends** -->
+
+
+
+
+      <!-- **Full-width-section - Starts** -->
+<div class="full-width-section">
+        <div class="dt-sc-margin10"></div>
+          <div class="container">
+              <!-- **column - Starts**-->
+              <div class="column dt-sc-one-half first">
+
+          </div>
+                  <!-- **dt-sc-toggle-frame-set - Starts**  dt-sc-toggle-frame-set-->
+                  <table border="3" with="600px">
+                      <div class="">
+                      <h5 class="dt-sc-toggle-accordion"> Misión</h5>
+                      <div class=>
+
+                        <%= @resul.last.mision.html_safe %>
+
+
+
+                      </div><a id="obj"></a>
+                      <div class="dt-sc-margin10"></div>
+                      <h5 class="dt-sc-toggle-accordion "> Visión</h5>
+                      <div class="">
+
+                        <%= @resul.last.vision.html_safe %>
+
+                      </div><a id="orga"></a>
+                      <div class="dt-sc-margin10"></div>
+                      <h5 class="dt-sc-toggle-accordion "> Objetivos</h5>
+                      <div class="">
+
+                        <%= @resul.last.objetivos.html_safe %>
+
+                      </div>
+                      <div class="dt-sc-margin10"></div>
+                      <h5 class="dt-sc-toggle-accordion "> Organigrama</h5>
+                      <div class="">
+
+                          <%= image_tag  @resul.last.organigrama_url(:medium) if @resul.last.organigrama? %>
+
+                      </div>
+      </div> <!-- **dt-sc-toggle-frame-set - Ends** -->
+    </table>
+      </div> <!-- **column - Ends** -->
+
+
+
+          </div> <!-- **container - Ends** -->
+          <div class="dt-sc-hr-invisible-small"></div>
+      </div> <!-- **Full-width-section - Ends** -->

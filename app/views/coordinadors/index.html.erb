@@ -28,9 +28,9 @@
         <td><%= coordinador.facebook %></td>
         <td><%= coordinador.correo %></td>
         <td><%= coordinador.linkd %></td>
-        <td><%= link_to 'Show', coordinador %></td>
-        <td><%= link_to 'Edit', edit_coordinador_path(coordinador) %></td>
-        <td><%= link_to 'Destroy', coordinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', coordinador %></td>
+        <td><%= link_to 'Editar', edit_coordinador_path(coordinador) %></td>
+        <td><%= link_to 'Eliminar', coordinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Coordinador', new_coordinador_path %>
+<%= link_to 'Nuevo Coordinador', new_coordinador_path %>

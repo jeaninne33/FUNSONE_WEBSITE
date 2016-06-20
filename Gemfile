@@ -6,6 +6,9 @@ gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
+#gem 'jquery-rails'
+gem "font-awesome-rails"
+gem "bootstrap-sass"
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,7 +29,9 @@ gem 'carrierwave'
 gem "rmagick"
 gem 'simple_form'
 gem 'thin'
+gem 'hirb'
 
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,4 +51,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

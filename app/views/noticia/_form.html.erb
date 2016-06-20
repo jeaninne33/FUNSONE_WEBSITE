@@ -1,0 +1,22 @@
+<%= simple_form_for @noticium , html: { class: 'form-horizontal',:multipart => true } do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+        <%= '       Los Campos con (*) son Obligatorios!' %><br>
+        </div>
+
+  <div class="field">
+     <%= f.input :foto , type:' field'  , label: 'Foto:'  %>
+  </div>
+  <div class="field">
+    <%= f.input :titulo  %>
+  </div>
+  <div class="field">
+    <%= f.input :mensaje %>
+  </div>
+    <div class="field">
+    <%= f.input :categoria, collection: ['Ayudas', 'Salud','Educación','Eventos'], prompt: "--Seleccione--"  %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

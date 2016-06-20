@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de  Instituciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Mision</th>
+      <th>Vision</th>
+      <th>Organigrama</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institucions.each do |institucion| %>
+      <tr>
+        <td><%= institucion.nombre %></td>
+        <td><%= institucion.descripcion %></td>
+        <td><%= institucion.mision %></td>
+        <td><%= institucion.vision %></td>
+        <td><%= image_tag  institucion.organigrama_url(:thumb) if institucion.organigrama? %></td>
+        <td><%= link_to 'Mostrar', institucion %></td>
+        <td><%= link_to 'Editar', edit_institucion_path(institucion) %></td>
+        <td><%= link_to 'Eliminar', institucion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Institucion', new_institucion_path %>

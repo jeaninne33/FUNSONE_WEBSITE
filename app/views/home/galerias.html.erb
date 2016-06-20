@@ -1,0 +1,75 @@
+<!-- **Main - Starts** -->
+       <div id="main">
+           <div class="parallax full-width-bg">
+               <div class="container">
+                   <div class="main-title">
+                       <h1>Galerias</h1>
+                       <div class="breadcrumb">
+                           <%= link_to "Inicio", root_path   %>
+                           <span class="fa fa-angle-right"></span>
+
+                               <%= link_to "Galerias" , galerias_path %>
+
+                             <span class="fa fa-angle-right"></span>
+                           <span class="current">Todas</span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+
+      <div class="dt-sc-margin100"></div>
+      <!-- Container starts-->
+      <div class="container">
+          <!-- Primary Starts -->
+          <section id="primary" class="content-full-width">
+            <!--<div class="sorting-container dt-sc-hr-invisible-small">
+                <a data-filter=".all-sort" class="active-sort" href="#" >All</a>
+                  <a data-filter=".photography-sort" href="#" >Photography</a>
+                  <a href="#" data-filter=".outdoors-sort" >Outdoors</a>
+                  <a href="#" data-filter=".fashion-sort" >Fashion</a>
+                  <a data-filter=".graphic-sort" href="#" >Graphic Design</a>
+              </div>-->
+              <div class="dt-sc-margin10"></div>
+              <!-- **portfolio-container - Starts** -->
+              <div class="portfolio-container">
+        <% if !@galerias.blank? %>
+        <% @i=0 %>
+              <% for item2 in @galerias %>
+              <% if !item2.paintings.blank? %>
+                   <% @i=@i+1 %>
+
+                  <div class="portfolio dt-sc-one-third column with-space all-sort outdoors-sort fashion-sort">
+                      <!-- **portfolio-thumb - Starts** -->
+                      <div class="portfolio-thumb">
+                          <%= image_tag item2.paintings.last.foto_url(:galery) if item2.paintings.last.foto? %>
+                          <div class="image-overlay">
+                               <%= link_to item2.paintings.last.foto_url, :class => "zoom", "data-gal"=>"prettyPhoto[gallery]" do %><span class="fa fa-search"></span><% end %>
+              <%= link_to single_galeria_path(item2.id), :class =>"link" do %><span class="fa fa-link"></span> <% end %>
+                          </div>
+                      </div> <!-- **portfolio-thumb - Ends** -->
+                      <!-- **portfolio-detail - Starts** -->
+                      <div class="portfolio-detail">
+                          <div class="views"><span class="fa fa-heart"></span></div>
+                          <div class="portfolio-title">
+                             <h5> <p><%= link_to single_galeria_path(item2.id) do %><%= item2.nombre %> <% end %><p/></h5>
+
+                          </div>
+                      </div> <!-- **portfolio-detail - Ends** -->
+                  </div>
+
+
+                   <% end%>
+              <% end%>
+
+          <% end %>
+              </div> <!-- **portfolio-container - Ends** -->
+              <div class="dt-sc-margin50"></div>
+          </section>
+
+      </div> <!-- **container - Ends** -->
+
+<!---/////////////////////////////////////////////////////////////////////////////////////////////////////!*-->
+
+
+       </div> <!-- **Main - Ends** -->

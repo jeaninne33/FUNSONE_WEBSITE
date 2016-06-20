@@ -79,15 +79,15 @@
 	background-image: url('fancybox/fancybox_sprite.png');
 }
 
-.fancybox-close:before { 
-	content: "\f00d"; 
-	font-family: fontawesome; 
-	color: #fff; 
-	font-size: 18px; 
-	background-color: black; 
-	padding: 6px 7px; 
-	border: 2px solid #fff; 
-	border-radius: 50%; 
+.fancybox-close:before {
+	content: "\f00d";
+	font-family: fontawesome;
+	color: #fff;
+	font-size: 18px;
+	background-color: black;
+	padding: 6px 7px;
+	border: 2px solid #fff;
+	border-radius: 50%;
 }
 
 .fancybox-item.fancybox-close { background:none; }

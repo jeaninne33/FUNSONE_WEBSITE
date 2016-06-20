@@ -1,0 +1,132 @@
+   <div class="full-width-section"><a id="tipo"></a>
+						<div class="dt-sc-margin10"></div>
+							<div class="container">
+									<!-- **column - Starts**-->
+						   <div class="column dt-sc-one-half first">
+
+						</div>
+
+<table border="3" with="500px">
+<div class="dt-sc-margin10"></div>
+		<h5 class="dt-sc-toggle-accordion "> Solicitud en Línea a la <strong>Coordinación de <%= @ayudas.last.nombre_ayuda %></strong></h5>
+
+
+ <div style="color: black;
+padding: 15px 50px 5px 50px;
+float: left;
+font-size: 16px;">
+ <% if usuario_signed_in? %>
+
+      <%= "Ultimo acceso: "+current_usuario.last_sign_in_at.strftime("%d-%m-%y")+" a las: "+current_usuario.last_sign_in_at.strftime("%l:%M %P")%>
+      <%= link_to raw('<i class="fa fa-sign-out"></i> Cerrar sesion'), destroy_usuario_session_path, method: :delete, :class=>"dt-sc-button1 ico-button", style: 'font-size: 15px; padding: 15px 29px; background: #B03B27; border: 2px solid #B03B27;'%>
+
+
+
+		<div class="">
+			<p><br/><i> Los campos con (*) son Obligatorios</i></p>
+			<%= form_tag( ayudas_sociales_path(params[:id])  , :method => "get", id: "search-form", :html=> { class: 'form-horizontal',:multipart => true, :novalidate => false  }) do %>
+<div class="column dt-sc-one-third first">
+<p> <span> Cedula*<%= text_field_tag :cedula, nil ,:placeholder=>"Cedula*", required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+
+</span> </p>
+</div>
+					<div class="column dt-sc-one-third">
+							<p> <span> Primer Nombre*<%= text_field_tag :nombre1, nil, :placeholder=>"Primer Nombre*", required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+
+								 </span> </p>
+					</div>
+<div class="column dt-sc-one-third">
+<p> <span>Segundo Nombre<%= text_field_tag :nombre2, nil, :placeholder=>"Segundo Nombre" ,  oninput: "setCustomValidity('')"%>
+
+</span> </p>
+</div>
+					<div class="column dt-sc-one-third first">
+							<p> <span>Primer Apellido* <%= text_field_tag :apellido1, nil ,:placeholder=>"Primer Apellido*", required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+
+								 </span> </p>
+					</div>
+					<div class="column dt-sc-one-third">
+							<p> <span> Segundo Apellido<%= text_field_tag :apellido2, nil, :placeholder=>"Segundo Apellido", oninput: "setCustomValidity('')"%>
+
+								 </span> </p>
+					</div>
+
+
+					<div class="column dt-sc-one-third">
+							<p> <span>Fecha de Nacimiento* <%= date_field_tag :fecha_nac,  nil, min: Date.today.year - 100 ,max: Date.today.year - 16 ,required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+
+								 </span> </p>
+					</div>
+					<p> Direccion de Habitación <%= text_area_tag :direccion, nil, cols:2, rows:2, :placeholder=>"Direccion de Habitación", required: true  , oninvalid: "this.setCustomValidity('Campo Obligatorio')" , oninput: "setCustomValidity('')"%>
+
+						<div class="column dt-sc-one-third first">
+								<p> <span>Sexo*<br/><%= select_tag :sexo,  options_for_select([['Femenino'],['Masculino']]), prompt:"Seleccione el Sexo*", oninvalid: "this.setCustomValidity('Campo Obligatorio'')", required: true,  oninput: "setCustomValidity('')"%>
+
+								</span> </p>
+						</div>
+						<div class="column dt-sc-one-third">
+								<p> <span> Municipio*<br/><%= select_tag :municipio,  options_for_select([["Antolín del Campo"],["Arismendi"],["Díaz"],["García"],["Gómez"],["Maneiro"],["Marcano"], ["Mariño"],[ "Península de Macanao"], ["Tubores"], ["Villalba"]]), prompt:"Seleccione el Municipio",required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio'')",  oninput: "setCustomValidity('')"%>
+
+								</span> </p>
+						</div>
+
+								<% @tipo=params[:id]; %>
+								<% if @tipo=='1' %>
+								<% @colec= [['Beca Universitaria'],['Beca Estudiantil']] %>
+								<% elsif  @tipo=='2'%>
+								 <% @colec= [['Estudios Especializados'],['Medicamentos'], ['Ayudas Técnicas'], ['Pasaje Aereo']] %>
+								<% elsif  @tipo=='3'%>
+									<% @colec= [['Canastillas'],['Estudios Especializados'],['Medicamentos'], ['Ayudas Técnicas'], ['Pasaje Aereo'],['Kit Deportivo']] %>
+							 <% elsif  @tipo=='4'%>
+									<% @colec= [['Estudios Especializados'],['Medicamentos'], ['Ayudas Técnicas'], ['Pasaje Aereo']] %>
+								<% end %>
+								<div class="column dt-sc-one-third">
+										<p> <span>Ayuda*<br/><%= select_tag :ayuda,  options_for_select(@colec), prompt:"Seleccione la Ayuda", required: true,  oninput: "setCustomValidity('')"%>
+
+										</span> </p>
+								</div>
+
+					<div class="column dt-sc-one-third first" >
+							<p> <span> Telefono 1*<%= text_field_tag :telefono1, nil, :placeholder=>"Telefono 1",required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio')", oninput: "setCustomValidity('')"%>
+
+								 </span> </p>
+					</div>
+					<div class="column dt-sc-one-third">
+							<p> <span> Telefono 2<br/><%= text_field_tag :telefono2, nil, :placeholder=>"Telefono 2",required: true, oninvalid: "this.setCustomValidity('Campo Obligatorio'')",  oninput: "setCustomValidity('')"%>
+
+							</span> </p>
+					</div>
+					<div class="column dt-sc-one-third">
+						<br/><br/>
+						<p> <%= submit_tag "Enviar Solicitud" %>
+					</p>
+					</div>
+						</div>
+		<div class="dt-sc-margin10"></div>
+
+					  <div class="column dt-sc-one-third"><span> </span>  </div>
+
+
+<% end %>
+		</div>
+		<div class="dt-sc-margin10"></div>
+
+  <%else %>
+
+<div align="left" style="position: relative; float: left;">
+  <div class="alert alert-success"><strong>Debes iniciar Sesion para hacer la solicitud<strong/>
+                                </div>
+<!--class: "btn btn-default btn-md boton"-->
+   <%= link_to raw('<i class="fa fa-user"></i> Iniciar sesion'), new_usuario_session_path , :class=>"dt-sc-button1 ico-button", style: 'font-size: 15px; padding: 15px 29px;'%>
+
+    <%=
+    link_to raw('<i class="fa  fa-user-plus"></i> Registrarse'), new_usuario_registration_path, :class=>"dt-sc-button1 ico-button", style: 'font-size: 15px; padding: 15px 29px;'   %>
+</div>
+
+    <% end %>
+  </div>
+
+
+	</table>
+   </div>
+</div>

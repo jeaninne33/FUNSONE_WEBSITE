@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<p><strong> Mostrando Noticia</strong></p>
+<p>
+  <strong>Titulo:</strong>
+  <%= @noticium.titulo %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @noticium.categoria %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag @noticium.foto_url(:medium) if @noticium.foto? %>
+
+</p>
+
+<p>
+  <strong>Mensaje:</strong>
+  <%= @noticium.mensaje %>
+</p>
+
+<%= link_to 'Editar', edit_noticium_path(@noticium) %> |
+<%= link_to 'Atrás', noticia_path %>

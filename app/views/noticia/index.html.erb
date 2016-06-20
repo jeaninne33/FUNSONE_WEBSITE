@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Noticias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Categoria</th>
+      <th>Foto</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @noticia.each do |noticium| %>
+      <tr>
+        <td><%= noticium.titulo %></td>
+        <td><%= noticium.categoria %></td>
+        <td><%= image_tag noticium.foto_url(:thumb) if noticium.foto? %></td>
+        <td><%= noticium.mensaje %></td>
+        <td><%= link_to 'Mostrar', noticium %></td>
+        <td><%= link_to 'Editar', edit_noticium_path(noticium) %></td>
+        <td><%= link_to 'Eliminar', noticium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Noticia', new_noticium_path %>

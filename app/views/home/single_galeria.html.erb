@@ -1,0 +1,121 @@
+<!-- **Main - Starts** -->
+    <div id="main">
+          <div class="parallax full-width-bg">
+              <div class="container">
+                  <div class="main-title">
+                      <h1>Detalle de Galeria</h1>
+                        <div class="breadcrumb">
+                            <%= link_to "Inicio", root_path   %>
+                            <span class="fa fa-angle-right"></span>
+                               <%= link_to "Galerias" , galerias_path %>
+                            <span class="fa fa-angle-right"></span>
+                            <span class="current"><%= @galeria.nombre%></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-sc-margin100"></div>
+      <!-- Container starts-->
+      <div class="container">
+              <!-- Primary Starts -->
+        <section id="primary" class="content-full-width">
+                    <article class="content">
+                        <div class="column dt-sc-two-third first">
+                            <!-- **recent-gallery-container - Starts** -->
+                            <div class="recent-gallery-container">
+                                <!-- **recent-gallery - Starts** -->
+                                <ul class="recent-gallery">
+                                    <% if !@galeria.paintings.blank? %>
+                                        <% for item in @galeria.paintings %>
+
+
+                                    <li> <%= image_tag item.foto_url(:galery) if item.foto? %> </li>
+                                      <% end%>
+                                    <% end %>
+                                </ul> <!-- **recent-gallery - Ends** -->
+                                <!-- **bx-pager - Starts** -->
+                                <div id="bx-pager">
+                                          <%  @i=0 %>
+
+                                         <% if !@galeria.paintings.blank? %>
+                                        <% for item1 in @galeria.paintings %>
+
+                                          <a href="#" data-slide-index='<%= @i %>'><%= image_tag item1.foto_url(:galery) if item1.foto? %></a>
+                                           <% @i=@i+1 %>
+                                   <% end%>
+
+                                    <% end %>
+                                </div> <!-- **bx-pager - Ends** -->
+                            </div><!-- **recent-gallery-container - Ends** -->
+                       </div>
+                        <div class="column dt-sc-one-third">
+                            <h3><%= @galeria.nombre %></h3>
+                            <p style="text-align: justify;"> <%= @galeria.descripcion %></p>
+                            <div class="dt-sc-hr-invisible-very-small"></div>
+                            <!-- **project-details - Starts** -->
+                            <div class="project-details">
+                                <h6>Detalles</h6>
+                                <ul class="client-details">
+                                    <li>
+                                        <p><i class="fa fa-calendar-o"></i><span>Fecha:</span> <%= @galeria.fecha %></p>
+                                    </li>
+                                    <li>
+                                        <p><i class="fa fa-globe"></i><span>Lugar:</span> <%= @galeria.lugar %></p>
+                                    </li>
+
+                                </ul>
+                                <div class="dt-sc-hr-invisible-very-small"></div>
+
+                            </div> <!-- **project-details - Ends** -->
+                        </div>
+                        <div class="dt-sc-margin50"></div>
+
+                        <div class="dt-sc-hr-invisible"></div>
+                        <div class="recent-portfolio">
+                        <!-- **hr-title - Starts** -->
+                    <div class="hr-title">
+                        <h3>Galerias Recientes</h3>
+                        <div class="title-sep"> </div>
+                    </div> <!-- **hr-title - Ends** -->
+                    <div class="portfolio-carousel-wrapper">
+                        <!-- **portfolio-carousel - Starts** -->
+                        <div class="portfolio-carousel">
+
+                 <% if !@otras.blank? %>
+                  <% for item2 in @otras %>
+                  <% if !item2.paintings.blank? %>
+                                <div class="portfolio dt-sc-one-third no-space column">
+                                    <!-- **portfolio-thumb - Starts** -->
+                                    <div class="portfolio-thumb">
+                                        <figure>
+
+                                             <%= image_tag item2.paintings.last.foto_url(:galery) if item2.paintings.last.foto? %>
+                                            <div class="image-overlay">
+                                                 <%= link_to item2.paintings.last.foto_url, :class => "zoom", "data-gal"=>"prettyPhoto[gallery]" do %><span class="fa fa-search"></span><% end %>
+                                                 <%= link_to single_galeria_path(item2.id), :class =>"link" do %><span class="fa fa-link"></span> <% end %>
+                                                <div class="portfolio-content">
+                                                   <h5> <%= link_to single_galeria_path(item2.id) do %><%= item2.nombre %> <% end %></h5>
+                                                    <span class="fa fa-sort-up"></span>
+                                                </div>
+                                            </div>
+                                        </figure>
+
+                                    </div> <!-- **portfolio-thumb - Ends** -->
+                                </div>
+                                 <% end%>
+                                      <% end%>
+
+                                <% end %>
+                             </div> <!-- **portfolio-carousel - Ends** -->
+                           <div class="product-carousel">
+                                <a class="portfolio-prev" href="#"><span class="fa fa-angle-left"></span></a>
+                                <a class="portfolio-next" href="#"><span class="fa fa-angle-right"></span></a>
+                         </div>
+                         </div>
+                    </div>
+                    <div class="dt-sc-margin80"></div>
+               </article>
+               </section>
+            </div> <!-- **container - Ends** -->
+
+        </div> <!-- **Main - Ends** -->

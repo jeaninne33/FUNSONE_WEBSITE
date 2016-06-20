@@ -1,148 +1,155 @@
- <div id="menu-container">
-                        <!-- **Nav - Starts**-->
-                        <nav id="main-menu">
+<div id="menu-container">
+<!-- **Nav - Starts**-->
+<nav id="main-menu">
 
 <div id="dt-menu-toggle" class="dt-menu-toggle">
-    Menu
-    <span class="dt-menu-toggle-icon"></span>
+   Menu
+   <span class="dt-menu-toggle-icon"></span>
 </div>
 <ul class="menu">
-    <li class="current_page_item menu-item-simple-parent"><a href="index.html">Inicio</a>
-    
-        <a class="dt-menu-expand">+</a>
-    </li>
-    <li class="menu-item-megamenu-parent megamenu-1-columns-group menu-item-depth-0"><a href="side-navigation.html">Quienes Somos</a>
-        <div class="megamenu-child-container">
-            <ul class="sub-menu">
-                <li class="menu-item-with-widget-area">
-                    <a href="#">La Fundación</a>
-                    <p>Fundación Social Nueva Esparta</p>
-                    <div class="menu-item-widget-area-container">
-                        <ul>
-                            <li class="widget widget_text">
-                                <div class="textwidget">
-                                    <ul>
-                                        <li><a href="#">Misión</a></li>
-                                        <li><a href="#">Visión</a></li>
-                                        <li><a href="#">Organigrama</a></li>
-                                        <li><a href="#">Dirección</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-       
-            </ul>
-        </div>
-   <a class="dt-menu-expand">+</a>
 
-    </li>
-          <li class="menu-item-megamenu-parent megamenu-4-columns-group menu-item-depth-0"><a href="side-navigation.html">Ayudas Sociales</a>
-        <div class="megamenu-child-container">
-            <ul class="sub-menu">
-                <li class="menu-item-with-widget-area">
-                    <%= link_to "Becas Estudiantiles",ayudas_sociales_path(1)  %>
-                    <p>Becas Universitarias y Escolares</p>
-                    <div class="menu-item-widget-area-container">
-                        <ul>
-                            <li class="widget widget_text">
-                                <div class="textwidget">
-                                    <ul>
-                                        <li><%= link_to "Objetivos", ayudas_sociales_path(1, :anchor=> "obj")%></li>
-                                        <li><a href="#">Becas Escolares</a></li>
-                                        <li><a href="#">Becas Universitarias</a></li>
-                                        <li><a href="#">Contactos</a></li>
+
+   <li class="<%= 'current_page_item' if current_page?(root_path) %> menu-item-simple-parent"> <%= link_to "Inicio", root_path   %>    </li>
+   <li class="<%= 'current_page_item' if current_page?(quienes_somos_path) %>  menu-item-megamenu-parent megamenu-1-columns-group menu-item-depth-0"><%= link_to "Quienes Somos" , quienes_somos_path %>
+       <div class="megamenu-child-container">
+           <ul class="sub-menu">
+               <li class="menu-item-with-widget-area" class="<%= 'current_page_item' if current_page?(quienes_somos_path) %>">
+                 <%= link_to "La Fundación", quienes_somos_path()+raw("#funda")%>
+                   <p>Fundación Social Nueva Esparta</p>
+                   <div class="menu-item-widget-area-container ">
+                       <ul>
+                           <li class="widget widget_text <%= 'current_page_item' if current_page?(quienes_somos_path) %>" >
+                               <div class="textwidget">
+                                   <ul><%@a="mision"%>
+                                       <li><%= link_to "Misión", quienes_somos_path()+raw("#mision")%></li>
+                                       <li><%= link_to "Visión", quienes_somos_path()+raw("#vision")%></li>
+                                       <li><%= link_to "Objetivos", quienes_somos_path()+raw("#obj")%></li>
+                                       <li><%= link_to "Organigrama", quienes_somos_path()+raw("#orga")%></li>
+
                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                   
-                </li>
-       
-         <li class="menu-item-with-widget-area">
-                  <%= link_to "Adultos Mayores",ayudas_sociales_path(2)  %>
-                   <p>Ayudas destinada al Adulto Mayor</p>
-                    <div class="menu-item-widget-area-container">
-                        <ul>
-                            <li class="widget widget_text">
-                                <div class="textwidget">
-                                    <ul>
-                                        <li><a href="#">Objetivos</a></li>
-                                        <li><a href="#">Requisitos</a></li>
-                                        <li><a href="#">Tipo de Ayudas</a></li>
-                                        <li><a href="#">Contactos</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                     <li class="menu-item-with-widget-area">
-                     <%= link_to "Niños, Niñas y Adolescentes",ayudas_sociales_path(3)  %>
-                  
-                    <p>Ayudas destinada a los Niños, Niñas y Adolescentes</p>
-                    <div class="menu-item-widget-area-container">
-                        <ul>
-                            <li class="widget widget_text">
-                                <div class="textwidget">
-                                    <ul>
-                                        <li><a href="#">Objetivos</a></li>
-                                        <li><a href="#">Requisitos</a></li>
-                                        <li><a href="#">Tipos de Ayudas</a></li>
-                                        <li><a href="#">Contactos</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item-with-widget-area">
-                    <%= link_to "Personas con Discapacidad",ayudas_sociales_path(4)  %>
-                   
-                    <p>Ayudas destinada a atender a la comunidad discapacitada</p>
-                    <div class="menu-item-widget-area-container">
-                        <ul>
-                            <li class="widget widget_text">
-                                <div class="textwidget">
-                                    <ul>
-                                        <li><a href="#">Objetivos</a></li>
-                                        <li><a href="#">Requisitos</a></li>
-                                        <li><a href="#">Tipos de Ayudas</a></li>
-                                        <li><a href="#">Contactos</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-
-            </ul>
-        </div>
-                                                        <a class="dt-menu-expand">+</a>
-
-    </li>
-
-       <li class="menu-item-simple-parent"><a href="contact.html">aPaz y Vida</a>
-       </li>
-
-
-       <li class="menu-item-simple-parent"><a href="contact.html">Noticias</a>
-        <ul class="sub-menu">
-            <li><a href="contact.html">Noticias</a></li>
-            <li><a href="contact-v2.html">Galerias</a></li>
-        </ul>
-        <a class="dt-menu-expand">+</a>
-    </li>
-
-    <li class="menu-item-simple-parent"><a href="contact.html">Contactos</a>
-    
-
-    </li>
-</ul>
- </nav>
-                        <!-- **Nav - End**-->
+                               </div>
+                           </li>
+                       </ul>
                    </div>
+               </li>
+
+           </ul>
+       </div>
+  <a class="dt-menu-expand">+</a>
+
+   </li>
+         <li class="<%= 'current_page_item' if (current_page?(ayudas_sociales_path(1)) or current_page?(ayudas_sociales_path(2)) or current_page?(ayudas_sociales_path(3)) or current_page?(ayudas_sociales_path(4)) or current_page?(ayudas_path)) %> menu-item-megamenu-parent megamenu-4-columns-group menu-item-depth-0"> <%= link_to "Ayudas Sociales", ayudas_path %>
+       <div class="megamenu-child-container">
+           <ul class="sub-menu">
+               <li class="menu-item-with-widget-area">
+                   <%= link_to "Becas Estudiantiles",ayudas_sociales_path(1)  %>
+                   <p>Becas Universitarias y Escolares</p>
+                   <div class="menu-item-widget-area-container">
+                       <ul>
+                           <li class="widget widget_text <%= 'current_page_item' if (current_page?(ayudas_sociales_path(1)) or current_page?(ayudas_sociales_path(2)) or current_page?(ayudas_sociales_path(3)) or current_page?(ayudas_sociales_path(4)) or current_page?(ayudas_path)) %>">
+                               <div class="textwidget">
+                                   <ul>
+                                       <li><%= link_to "Objetivos", ayudas_sociales_path(1)+raw("#obj")%></li>
+                                       <li><%= link_to "Tipo de Becas y Requisitos", ayudas_sociales_path(1)+raw("#tipo")%></li>
+                                       <li><%= link_to "Contactos", ayudas_sociales_path(1)+raw("#con")%></li>
+
+                                       <li><%= link_to "Solicitud en Linea", solicitud_path(1)%></li>
+
+
+
+                                  </ul>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+
+               </li>
+
+        <li class="menu-item-with-widget-area">
+                 <%= link_to "Adultos Mayores",ayudas_sociales_path(2)  %>
+                  <p>Ayudas destinada al Adulto Mayor</p>
+                   <div class="menu-item-widget-area-container">
+                       <ul>
+                           <li class="widget widget_text <%= 'current_page_item' if (current_page?(ayudas_sociales_path(1)) or current_page?(ayudas_sociales_path(2)) or current_page?(ayudas_sociales_path(3)) or current_page?(ayudas_sociales_path(4)) or current_page?(ayudas_path)) %>" >
+                               <div class="textwidget">
+                                   <ul>
+                                       <li><%= link_to "Objetivos", ayudas_sociales_path(2)+raw("#obj")%></li>
+                                       <li><%= link_to "Tipo de Ayudas y Requisitos", ayudas_sociales_path(2)+raw("#tipo")%></li>
+                                       <li><%= link_to "Contactos", ayudas_sociales_path(2)+raw("#con")%></li>
+                                        <li><%= link_to "Solicitud en Linea", solicitud_path(2)%></li>
+                                   </ul>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+               </li>
+
+                    <li class="menu-item-with-widget-area">
+                    <%= link_to "Niños, Niñas y Adolescentes",ayudas_sociales_path(3)  %>
+
+                   <p>Ayudas destinada a los Niños, Niñas y Adolescentes</p>
+                   <div class="menu-item-widget-area-container">
+                       <ul>
+                           <li class="widget widget_text <%= 'current_page_item' if (current_page?(ayudas_sociales_path(1)) or current_page?(ayudas_sociales_path(2)) or current_page?(ayudas_sociales_path(3)) or current_page?(ayudas_sociales_path(4)) or current_page?(ayudas_path)) %>">
+                               <div class="textwidget">
+                                   <ul>
+                                       <li><%= link_to "Objetivos", ayudas_sociales_path(3)+raw("#obj")%></li>
+                                       <li><%= link_to "Tipo de Ayudas y Requisitos", ayudas_sociales_path(3)+raw("#tipo")%></li>
+                                       <li><%= link_to "Contactos", ayudas_sociales_path(3)+raw("#con")%></li>
+                                        <li><%= link_to "Solicitud en Linea", solicitud_path(3)%></li>
+                                   </ul>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+               </li>
+               <li class="menu-item-with-widget-area">
+                   <%= link_to "Personas con Discapacidad",ayudas_sociales_path(4)  %>
+
+                   <p>Ayudas destinada a atender a la comunidad discapacitada</p>
+                   <div class="menu-item-widget-area-container">
+                       <ul>
+                           <li class="widget widget_text <%= 'current_page_item' if (current_page?(ayudas_sociales_path(1)) or current_page?(ayudas_sociales_path(2)) or current_page?(ayudas_sociales_path(3)) or current_page?(ayudas_sociales_path(4)) or current_page?(ayudas_path)) %>">
+                               <div class="textwidget">
+                                   <ul>
+                                       <li><%= link_to "Objetivos", ayudas_sociales_path(4)+raw("#obj")%></li>
+                                       <li><%= link_to "Tipo de Ayudas y Requisitos", ayudas_sociales_path(4)+raw("#tipo")%></li>
+                                       <li><%= link_to "Contactos", ayudas_sociales_path(4)+raw("#con")%></li>
+                                       <li><%= link_to "Solicitud en Linea", solicitud_path(4)%></li>
+                                   </ul>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+               </li>
+
+
+           </ul>
+       </div>
+     <a class="dt-menu-expand">+</a>
+
+   </li>
+
+      <li class=" menu-item-simple-parent <%= 'current_page_item' if current_page?(pazyvida_path) %>"><%= link_to "Paz y Vida", pazyvida_path %>
+      </li>
+
+
+      <li class=" menu-item-simple-parent <%= 'current_page_item' if current_page?(noticias_path) %> "><%= link_to "Noticias" , noticias_path %>
+       <ul class="sub-menu">
+           <li><%= link_to "Noticias" , noticias_path %></li>
+           <li><%= link_to "Galerias" , galerias_path %></li>
+       </ul>
+       <a class="dt-menu-expand">+</a>
+   </li>
+
+
+
+       </li>
+   <li class="<%= 'current_page_item' if current_page?(contacto_path) %> menu-item-simple-parent"><%= link_to "Contactos" , contacto_path %>
+
+
+   </li>
+</ul>
+</nav>
+                       <!-- **Nav - End**-->
+</div>
